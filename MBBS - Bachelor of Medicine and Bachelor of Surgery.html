@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,13 +10,1975 @@
     <!-- Font Awesome for Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <!-- Google Fonts: Poppins -->
-     <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
     <link
         href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
         rel="stylesheet">
     <style>
         body {
             font-family: 'Poppins', sans-serif;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        .container {
+            padding: 2rem 1rem;
+            max-width: 1200px;
+        }
+
+        .section-title {
+            font-size: 2rem;
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+            color: #000;
+            display: flex;
+            align-items: center;
+            transition: color 0.3s ease;
+        }
+
+        .section-title:hover {
+            color: #000;
+        }
+
+        .section-title i {
+            margin-right: 0.75rem;
+            font-size: 1.5rem;
+            color: #007bff;
+        }
+
+        .subsection-title {
+            font-size: 1.5rem;
+            font-weight: 500;
+            margin: 1.5rem 0 1rem;
+            color: #000;
+            display: flex;
+            align-items: center;
+            transition: color 0.3s ease;
+        }
+
+        .subsection-title:hover {
+            color: #000;
+        }
+
+        .subsection-title i {
+            margin-right: 0.5rem;
+            font-size: 1.2rem;
+            color: #007bff;
+        }
+
+        .card {
+            border: none;
+            border-radius: 12px;
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+            margin-bottom: 2rem;
+            padding: 1.5rem;
+            background: #fff;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+        }
+
+        .list-group-item {
+            border: none;
+            padding: 0.75rem 0;
+            display: flex;
+            align-items: center;
+            font-size: 1rem;
+            transition: background 0.2s ease;
+        }
+
+        .list-group-item:hover {
+            background: #f1f9ff;
+            border-radius: 8px;
+        }
+
+        .list-group-item i {
+            margin-right: 0.75rem;
+            color: #007bff;
+        }
+
+        .table {
+            background: #fff;
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        .table th,
+        .table td {
+            padding: 1rem;
+            vertical-align: middle;
+        }
+
+        .table th i {
+            margin-right: 0.5rem;
+        }
+
+        .table tbody tr:hover {
+            background: #f1f9ff;
+        }
+
+        p {
+            font-size: 1rem;
+            margin-bottom: 1rem;
+        }
+
+        p i {
+            margin-right: 0.5rem;
+            color: #000;
+        }
+
+        /* Mobile Responsiveness */
+        @media (max-width: 768px) {
+            .container {
+                padding: 1.5rem 0.75rem;
+            }
+
+            .section-title {
+                font-size: 1.8rem;
+            }
+
+            .subsection-title {
+                font-size: 1.4rem;
+            }
+
+            .card {
+                padding: 1rem;
+                margin-bottom: 1.5rem;
+            }
+
+            .list-group-item {
+                font-size: 0.95rem;
+                padding: 0.5rem 0;
+            }
+
+            .table th,
+            .table td {
+                font-size: 0.9rem;
+                padding: 0.75rem;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .section-title {
+                font-size: 1.6rem;
+            }
+
+            .subsection-title {
+                font-size: 1.3rem;
+            }
+
+            .card {
+                padding: 0.75rem;
+            }
+
+            .list-group-item {
+                font-size: 0.9rem;
+            }
+
+            .table {
+                font-size: 0.85rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- hero section -->
+
+
+    <style>
+        .hero-section {
+            background: linear-gradient(135deg, #3498db 0%, #007bff 100%);
+            text-align: center;
+            color: #ffffff;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-section h1 {
+            font-size: 4rem;
+            font-weight: 700;
+            margin: 0;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        .hero-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.1);
+            z-index: 0;
+        }
+
+        .hero-section h1,
+        .breadcrumb {
+            position: relative;
+            z-index: 1;
+        }
+
+        .breadcrumb {
+            background-color: transparent;
+            justify-content: center;
+        }
+
+        .breadcrumb-item a {
+            color: #ffffff;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        .breadcrumb-item a:hover {
+            color: #f1faff;
+        }
+
+        .breadcrumb-item.active {
+            color: #f1faff;
+            font-weight: 600;
+        }
+
+        .breadcrumb-item+.breadcrumb-item::before {
+            color: #ffffff;
+        }
+
+        .footer-section {
+            text-align: center;
+            padding: 1.5rem 0;
+            margin-top: 2rem;
+            border-top: 1px solid #e0e0e0;
+            color: #34495e;
+        }
+
+        .footer-section p {
+            margin: 0;
+            font-size: 1rem;
+        }
+
+        .footer-section a {
+            color: #3498db;
+            text-decoration: none;
+            margin: 0 10px;
+            transition: color 0.3s ease;
+        }
+
+        .footer-section a:hover {
+            color: #007bff;
+        }
+
+        @media (max-width: 767px) {
+            .hero-section {
+                padding: 2rem 1rem;
+            }
+
+            .hero-section h1 {
+                font-size: 2.5rem;
+            }
+
+            .breadcrumb {
+                font-size: 0.9rem;
+                margin-bottom: 1rem;
+            }
+
+            .footer-section {
+                padding: 1rem 0;
+                font-size: 0.9rem;
+            }
+
+            .footer-section a {
+                margin: 0 5px;
+            }
+
+            .box-container {
+                padding: 1.5rem;
+                margin: 1rem;
+            }
+        }
+    </style>
+
+    <div class="container-fluid p-0">
+
+        <div class="hero-section">
+
+            <h1>MBBS</h1>
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="#">Home</a></li>
+                    <li class="breadcrumb-item"><a href="#">Courses</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">MBBS</li>
+                </ol>
+            </nav>
+        </div>
+
+
+    </div>
+
+
+
+    <!-- hero end -->
+
+
+    <!-- sec start -->
+    <div class="container">
+        <!-- 1. Course Overview -->
+        <div class="section-title"><i class="fas fa-book-medical"></i> Course Overview</div>
+        <div class="card">
+            <p>The MBBS (Bachelor of Medicine and Bachelor of Surgery) is a comprehensive 5.5-year undergraduate program
+                that trains students to become qualified medical doctors. The program integrates a 4.5-year academic
+                curriculum with a compulsory 1-year clinical internship. MBBS equips students with in-depth theoretical
+                knowledge and hands-on clinical skills essential for diagnosing and treating a wide range of health
+                conditions. It plays a vital role in strengthening healthcare systems and improving public health
+                outcomes globally.</p>
+        </div>
+
+        <!-- 2. Who Should Pursue This Course? -->
+        <div class="med-card">
+            <div class="med-card-header">
+                <div class="med-icon-circle">
+                    <i class="fas fa-user-md"></i>
+                </div>
+                <h3>Who Should Pursue This Course?</h3>
+                <div class="med-wave"></div>
+            </div>
+
+            <ul class="med-card-list">
+                <li class="med-list-item">
+                    <div class="item-icon">
+                        <i class="fas fa-heart"></i>
+                    </div>
+                    <span>Students passionate about healthcare and helping others</span>
+                </li>
+
+                <li class="med-list-item">
+                    <div class="item-icon">
+                        <i class="fas fa-flask"></i>
+                    </div>
+                    <span>Interest in Biology, Chemistry, and Life Sciences</span>
+                </li>
+
+                <li class="med-list-item">
+                    <div class="item-icon">
+                        <i class="fas fa-brain"></i>
+                    </div>
+                    <span>Aptitude for problem-solving and analytical thinking</span>
+                </li>
+
+                <li class="med-list-item">
+                    <div class="item-icon">
+                        <i class="fas fa-briefcase-medical"></i>
+                    </div>
+                    <span>Willingness to work in high-pressure environments</span>
+                </li>
+
+                <li class="med-list-item">
+                    <div class="item-icon">
+                        <i class="fas fa-stethoscope"></i>
+                    </div>
+                    <span>Aspiration to pursue careers in clinical practice, medical research, public health, or medical
+                        education</span>
+                </li>
+            </ul>
+        </div>
+
+        <style>
+            .med-card {
+                background: white;
+                border-radius: 12px;
+                overflow: hidden;
+                box-shadow: 0 5px 20px rgba(0, 119, 182, 0.1);
+                width: 100%;
+                max-width: 100%;
+                transition: transform 0.3s ease;
+                margin: 0;
+                box-sizing: border-box;
+            }
+
+            .med-card:hover {
+                transform: translateY(-3px);
+            }
+
+            .med-card-header {
+                background: linear-gradient(135deg, #007bff 0%, #00b4d8 100%);
+                color: white;
+                padding: 25px 15px 35px;
+                text-align: center;
+                position: relative;
+                width: 100%;
+                box-sizing: border-box;
+            }
+
+            .med-icon-circle {
+                width: 60px;
+                height: 60px;
+                background: rgba(255, 255, 255, 0.2);
+                border-radius: 50%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                margin: 0 auto 15px;
+                font-size: 1.5rem;
+            }
+
+            .med-card-header h3 {
+                margin: 0;
+                font-weight: 600;
+                padding: 0 10px;
+            }
+
+            .med-wave {
+                position: absolute;
+                bottom: -1px;
+                left: 0;
+                width: 100%;
+                height: 20px;
+                background: url('data:image/svg+xml;utf8,<svg viewBox="0 0 1200 120" xmlns="http://www.w3.org/2000/svg"><path d="M0,0V46.29c47.79,22.2,103.59,32.17,158,28,70.36-5.37,136.33-33.31,206.8-37.5C438.64,32.43,512.34,53.67,583,72.05c69.27,18,138.3,24.88,209.4,13.08,36.15-6,69.85-17.84,104.45-29.34C989.49,25,1113-14.29,1200,52.47V0Z" fill="white" opacity=".25"/></svg>');
+                background-size: cover;
+            }
+
+            .med-card-list {
+                list-style: none;
+                padding: 20px 15px;
+                margin: 0;
+                width: 100%;
+                box-sizing: border-box;
+            }
+
+            .med-list-item {
+                display: flex;
+                align-items: center;
+                padding: 15px 10px;
+                border-bottom: 1px solid #f0f8ff;
+                transition: background 0.2s ease;
+                width: 100%;
+                box-sizing: border-box;
+            }
+
+            .med-list-item:last-child {
+                border-bottom: none;
+            }
+
+            .med-list-item:hover {
+                background: #f8fdff;
+            }
+
+            .item-icon {
+                width: 40px;
+                height: 40px;
+                background: #e6f4ff;
+                border-radius: 50%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                margin-right: 15px;
+                color: #007bff;
+                flex-shrink: 0;
+            }
+
+            /* Responsive adjustments */
+            @media (max-width: 768px) {
+                .med-card-header {
+                    padding: 20px 10px 30px;
+                }
+
+                .med-icon-circle {
+                    width: 50px;
+                    height: 50px;
+                    font-size: 1.3rem;
+                }
+
+                .med-card-list {
+                    padding: 15px 10px;
+                }
+            }
+
+            @media (max-width: 480px) {
+                .med-list-item {
+                    flex-direction: column;
+                    text-align: center;
+                    padding: 15px 5px;
+                }
+
+                .item-icon {
+                    margin-right: 0;
+                    margin-bottom: 10px;
+                }
+
+                .med-card-header h3 {
+                    font-size: 1.2rem;
+                }
+            }
+        </style>
+
+        <!-- 3. Eligibility Criteria -->
+        <div class="fluid-eligibility mt-5">
+    <div class="fluid-header">
+        <div class="fluid-main-icon">
+            <i class="fas fa-clipboard-check"></i>
+        </div>
+        <h2 class="fluid-title">Eligibility Criteria</h2>
+        <div class="fluid-wave"></div>
+    </div>
+    
+    <div class="fluid-sections-container">
+        <!-- UG Section -->
+        <div class="fluid-section fluid-ug">
+            <div class="fluid-section-header">
+                <div class="fluid-section-icon">
+                    <i class="fas fa-graduation-cap"></i>
+                </div>
+                <h3>UG</h3>
+            </div>
+            <ul class="fluid-criteria-list">
+                <li class="fluid-criteria-item">
+                    <div class="fluid-item-icon">
+                        <i class="fas fa-school"></i>
+                    </div>
+                    <div class="fluid-item-text">10+2 (Higher Secondary) in Science stream with Physics, Chemistry, Biology/Biotechnology</div>
+                </li>
+                <li class="fluid-criteria-item">
+                    <div class="fluid-item-icon">
+                        <i class="fas fa-percentage"></i>
+                    </div>
+                    <div class="fluid-item-text">Minimum 50% aggregate marks (General category), 40% (Reserved categories)</div>
+                </li>
+                <li class="fluid-criteria-item">
+                    <div class="fluid-item-icon">
+                        <i class="fas fa-user-clock"></i>
+                    </div>
+                    <div class="fluid-item-text">Minimum age: 17 years</div>
+                </li>
+            </ul>
+        </div>
+        
+        <!-- PG Section -->
+        <div class="fluid-section fluid-pg">
+            <div class="fluid-section-header">
+                <div class="fluid-section-icon">
+                    <i class="fas fa-user-graduate"></i>
+                </div>
+                <h3>PG</h3>
+            </div>
+            <ul class="fluid-criteria-list">
+                <li class="fluid-criteria-item">
+                    <div class="fluid-item-icon">
+                        <i class="fas fa-certificate"></i>
+                    </div>
+                    <div class="fluid-item-text">MBBS degree from a recognized institution</div>
+                </li>
+                <li class="fluid-criteria-item">
+                    <div class="fluid-item-icon">
+                        <i class="fas fa-file-alt"></i>
+                    </div>
+                    <div class="fluid-item-text">Internship completion certificate</div>
+                </li>
+                <li class="fluid-criteria-item">
+                    <div class="fluid-item-icon">
+                        <i class="fas fa-file-medical"></i>
+                    </div>
+                    <div class="fluid-item-text">NEET-PG qualification required for MD/MS programs</div>
+                </li>
+            </ul>
+        </div>
+        
+        <!-- Others Section -->
+        <div class="fluid-section fluid-other">
+            <div class="fluid-section-header">
+                <div class="fluid-section-icon">
+                    <i class="fas fa-globe"></i>
+                </div>
+                <h3>Others</h3>
+            </div>
+            <ul class="fluid-criteria-list">
+                <li class="fluid-criteria-item">
+                    <div class="fluid-item-icon">
+                        <i class="fas fa-language"></i>
+                    </div>
+                    <div class="fluid-item-text">English proficiency required for abroad programs</div>
+                </li>
+                <li class="fluid-criteria-item">
+                    <div class="fluid-item-icon">
+                        <i class="fas fa-passport"></i>
+                    </div>
+                    <div class="fluid-item-text">Age eligibility per individual country/university regulations</div>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<style>
+.fluid-eligibility {
+    font-family: 'Segoe UI', Roboto, sans-serif;
+    width: 100%;
+    box-shadow: 0 5px 30px rgba(0, 119, 182, 0.15);
+    border-radius: 12px;
+    overflow: hidden;
+    margin: 0 auto;
+}
+
+.fluid-header {
+    background: linear-gradient(135deg, #007bff 0%, #3498db 100%);
+    color: white;
+    padding: 1.5rem 1rem 2.5rem;
+    text-align: center;
+    position: relative;
+    width: 100%;
+}
+
+.fluid-main-icon {
+    font-size: 2rem;
+    margin-bottom: 0.8rem;
+}
+
+.fluid-title {
+    margin: 0;
+    font-weight: 600;
+    font-size: 1.8rem;
+}
+
+.fluid-wave {
+    position: absolute;
+    bottom: -1px;
+    left: 0;
+    width: 100%;
+    height: 1.5rem;
+    background: url('data:image/svg+xml;utf8,<svg viewBox="0 0 1200 120" xmlns="http://www.w3.org/2000/svg"><path d="M0,0V46.29c47.79,22.2,103.59,32.17,158,28,70.36-5.37,136.33-33.31,206.8-37.5C438.64,32.43,512.34,53.67,583,72.05c69.27,18,138.3,24.88,209.4,13.08,36.15-6,69.85-17.84,104.45-29.34C989.49,25,1113-14.29,1200,52.47V0Z" fill="white" opacity=".25"/></svg>');
+    background-size: cover;
+}
+
+.fluid-sections-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    padding: 1rem;
+    background: white;
+}
+
+.fluid-section {
+    flex: 1 1 100%;
+    min-width: 0;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.08);
+    transition: transform 0.3s ease;
+}
+
+.fluid-section:hover {
+    transform: translateY(-3px);
+}
+
+.fluid-section-header {
+    display: flex;
+    align-items: center;
+    padding: 1rem;
+    background: linear-gradient(to right, #f8f9fa, #e9ecef);
+    border-left: 0.3rem solid;
+}
+
+.fluid-ug .fluid-section-header {
+    border-left-color: #007bff;
+}
+
+.fluid-pg .fluid-section-header {
+    border-left-color: #007bff;
+}
+
+.fluid-other .fluid-section-header {
+    border-left-color: #007bff;
+}
+
+.fluid-section-icon {
+    margin-right: 0.8rem;
+    font-size: 1.3rem;
+}
+
+.fluid-ug .fluid-section-icon {
+    color: #007bff;
+}
+
+.fluid-pg .fluid-section-icon {
+    color: #007bff;
+}
+
+.fluid-other .fluid-section-icon {
+    color: #007bff;
+}
+
+.fluid-section h3 {
+    margin: 0;
+    font-weight: 600;
+    font-size: 1.3rem;
+}
+
+.fluid-criteria-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.fluid-criteria-item {
+    display: flex;
+    align-items: center;
+    padding: 1rem;
+    border-bottom: 1px solid #f1f1f1;
+    transition: background 0.2s ease;
+}
+
+.fluid-criteria-item:last-child {
+    border-bottom: none;
+}
+
+.fluid-criteria-item:hover {
+    background-color: #f8f9fa;
+}
+
+.fluid-item-icon {
+    flex-shrink: 0;
+    width: 2.2rem;
+    height: 2.2rem;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 0.8rem;
+    color: white;
+    font-size: 0.9rem;
+}
+
+.fluid-ug .fluid-item-icon {
+    background-color: #007bff;
+}
+
+.fluid-pg .fluid-item-icon {
+    background-color: #007bff;
+}
+
+.fluid-other .fluid-item-icon {
+    background-color: #007bff;
+}
+
+.fluid-item-text {
+    flex: 1;
+    min-width: 0;
+}
+
+/* Responsive Layout */
+@media (min-width: 600px) {
+    .fluid-section {
+        flex: 1 1 calc(50% - 0.5rem);
+    }
+}
+
+@media (min-width: 900px) {
+    .fluid-section {
+        flex: 1 1 calc(33.333% - 0.7rem);
+    }
+    
+    .fluid-sections-container {
+        padding: 1.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .fluid-title {
+        font-size: 1.5rem;
+    }
+    
+    .fluid-section h3 {
+        font-size: 1.1rem;
+    }
+    
+    .fluid-criteria-item {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    
+    .fluid-item-icon {
+        margin-right: 0;
+        margin-bottom: 0.5rem;
+    }
+}
+</style>
+
+        <!-- 4. Entrance Exams & Admission Process -->
+        <div class="admission-process-container">
+    <div class="process-header">
+        <div class="process-main-icon">
+            <i class="fas fa-file-signature"></i>
+        </div>
+        <h2>Entrance Exams & Admission Process</h2>
+        <div class="process-wave"></div>
+    </div>
+    
+    <div class="process-sections">
+        <!-- UG Section -->
+        <div class="process-section ug-process">
+            <div class="process-section-header">
+                <div class="process-section-icon">
+                    <i class="fas fa-user-graduate"></i>
+                </div>
+                <h3>UG</h3>
+                <div class="corner-ribbon">Basic</div>
+            </div>
+            <div class="process-content">
+                <div class="process-item">
+                    <div class="process-item-icon">
+                        <i class="fas fa-file-medical"></i>
+                    </div>
+                    <div class="process-item-text">
+                        NEET-UG (Mandatory for all MBBS admissions in India)
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- PG Section -->
+        <div class="process-section pg-process">
+            <div class="process-section-header">
+                <div class="process-section-icon">
+                    <i class="fas fa-user-graduate"></i>
+                </div>
+                <h3>PG</h3>
+                <div class="corner-ribbon">Advanced</div>
+            </div>
+            <div class="process-content">
+                <div class="process-item">
+                    <div class="process-item-icon">
+                        <i class="fas fa-file-medical"></i>
+                    </div>
+                    <div class="process-item-text">
+                        NEET-PG (Mandatory for MD/MS admissions in India)
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Others Section -->
+        <div class="process-section other-process">
+            <div class="process-section-header">
+                <div class="process-section-icon">
+                    <i class="fas fa-globe"></i>
+                </div>
+                <h3>Others</h3>
+                <div class="corner-ribbon">Special</div>
+            </div>
+            <div class="process-content">
+                <div class="process-item">
+                    <div class="process-item-icon">
+                        <i class="fas fa-university"></i>
+                    </div>
+                    <div class="process-item-text">
+                        Direct Admission in select private colleges under Management Quota
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<style>
+.admission-process-container {
+    font-family: 'Segoe UI', Roboto, sans-serif;
+    width: 100%;
+    box-shadow: 0 5px 30px rgba(0, 119, 182, 0.15);
+    border-radius: 12px;
+    overflow: hidden;
+    margin: 2rem 0;
+}
+
+.process-header {
+    background: linear-gradient(135deg, #007bff 0%, #2575fc 100%);
+    color: white;
+    padding: 1.5rem 1rem 2.5rem;
+    text-align: center;
+    position: relative;
+}
+
+.process-main-icon {
+    font-size: 2.2rem;
+    margin-bottom: 0.8rem;
+    color: rgba(255,255,255,0.9);
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+    100% { transform: scale(1); }
+}
+
+.process-header h2 {
+    margin: 0;
+    font-weight: 600;
+    font-size: 1.8rem;
+    text-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.process-wave {
+    position: absolute;
+    bottom: -1px;
+    left: 0;
+    width: 100%;
+    height: 1.5rem;
+    background: url('data:image/svg+xml;utf8,<svg viewBox="0 0 1200 120" xmlns="http://www.w3.org/2000/svg"><path d="M0,0V46.29c47.79,22.2,103.59,32.17,158,28,70.36-5.37,136.33-33.31,206.8-37.5C438.64,32.43,512.34,53.67,583,72.05c69.27,18,138.3,24.88,209.4,13.08,36.15-6,69.85-17.84,104.45-29.34C989.49,25,1113-14.29,1200,52.47V0Z" fill="white" opacity=".25"/></svg>');
+    background-size: cover;
+}
+
+.process-sections {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    padding: 1.5rem;
+    background: white;
+}
+
+.process-section {
+    flex: 1 1 100%;
+    min-width: 0;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.process-section:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.12);
+}
+
+.process-section-header {
+    display: flex;
+    align-items: center;
+    padding: 1.2rem;
+    position: relative;
+    overflow: hidden;
+}
+
+.ug-process .process-section-header {
+    background: linear-gradient(135deg, #00b09b 0%, #96c93d 100%);
+}
+
+.pg-process .process-section-header {
+    background: linear-gradient(135deg, #f46b45 0%, #eea849 100%);
+}
+
+.other-process .process-section-header {
+    background: linear-gradient(135deg, #8e2de2 0%, #4a00e0 100%);
+}
+
+.process-section-header::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(rgba(255,255,255,0.1), rgba(255,255,255,0));
+    z-index: 1;
+}
+
+.process-section-icon {
+    font-size: 1.5rem;
+    margin-right: 0.8rem;
+    color: white;
+    position: relative;
+    z-index: 2;
+}
+
+.process-section h3 {
+    margin: 0;
+    font-weight: 600;
+    font-size: 1.4rem;
+    color: white;
+    position: relative;
+    z-index: 2;
+}
+
+.corner-ribbon {
+    position: absolute;
+    top: 10px;
+    right: -30px;
+    width: 100px;
+    padding: 3px 0;
+    background: rgba(0,0,0,0.2);
+    color: white;
+    font-size: 0.8rem;
+    text-align: center;
+    transform: rotate(45deg);
+    z-index: 3;
+}
+
+.process-content {
+    padding: 1.2rem;
+}
+
+.process-item {
+    display: flex;
+    align-items: center;
+    padding: 1rem;
+    background: rgba(245, 247, 250, 0.6);
+    border-radius: 8px;
+    transition: all 0.3s ease;
+}
+
+.process-item:hover {
+    background: rgba(245, 247, 250, 0.9);
+    transform: translateX(5px);
+}
+
+.process-item-icon {
+    width: 2.5rem;
+    height: 2.5rem;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 1rem;
+    color: white;
+    font-size: 1rem;
+    flex-shrink: 0;
+}
+
+.ug-process .process-item-icon {
+    background: linear-gradient(135deg, #00b09b 0%, #96c93d 100%);
+}
+
+.pg-process .process-item-icon {
+    background: linear-gradient(135deg, #f46b45 0%, #eea849 100%);
+}
+
+.other-process .process-item-icon {
+    background: linear-gradient(135deg, #8e2de2 0%, #4a00e0 100%);
+}
+
+.process-item-text {
+    flex: 1;
+    font-size: 1rem;
+    line-height: 1.5;
+}
+
+/* Responsive Layout */
+@media (min-width: 768px) {
+    .process-section {
+        flex: 1 1 calc(50% - 1rem);
+    }
+}
+
+@media (min-width: 992px) {
+    .process-section {
+        flex: 1 1 calc(33.333% - 1rem);
+    }
+}
+
+@media (max-width: 480px) {
+    .process-header h2 {
+        font-size: 1.5rem;
+    }
+    
+    .process-section-header {
+        padding: 1rem;
+    }
+    
+    .process-section h3 {
+        font-size: 1.2rem;
+    }
+    
+    .process-item {
+        flex-direction: column;
+        text-align: center;
+        padding: 1rem;
+    }
+    
+    .process-item-icon {
+        margin-right: 0;
+        margin-bottom: 0.8rem;
+    }
+}
+</style>
+
+        <!-- 5. Course Duration -->
+        <div class="section-title"><i class="fas fa-clock"></i> Course Duration</div>
+
+<div class="course-duration-grid">
+  <div class="grid-card ug-grid-card">
+    <div class="grid-icon">
+      <i class="fas fa-user-graduate"></i>
+    </div>
+    <div class="grid-content">
+      <h3>Undergraduate (UG)</h3>
+      <div class="duration-primary">
+        <span class="duration-value">5.5</span>
+        <span class="duration-unit">Years</span>
+      </div>
+      <div class="duration-secondary">
+        (4.5 years academic + 1-year internship)
+      </div>
+      <div class="duration-progress-bar">
+        <div class="progress-segment academic" style="width: 82%"></div>
+        <div class="progress-segment internship" style="width: 18%"></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="grid-card pg-grid-card">
+    <div class="grid-icon">
+      <i class="fas fa-user-graduate"></i>
+    </div>
+    <div class="grid-content">
+      <h3>Postgraduate (MD/MS)</h3>
+      <div class="duration-primary">
+        <span class="duration-value">2-3</span>
+        <span class="duration-unit">Years</span>
+      </div>
+      <div class="duration-progress-bar">
+        <div class="progress-segment pg" style="width: 100%"></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="grid-card phd-grid-card">
+    <div class="grid-icon">
+      <i class="fas fa-graduation-cap"></i>
+    </div>
+    <div class="grid-content">
+      <h3>Doctorate (PhD)</h3>
+      <div class="duration-primary">
+        <span class="duration-value">2-3</span>
+        <span class="duration-unit">Years</span>
+      </div>
+      <div class="duration-secondary">
+        (optional after PG)
+      </div>
+      <div class="duration-progress-bar">
+        <div class="progress-segment phd" style="width: 100%"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<style>
+  .course-duration-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    margin-top: 30px;
+  }
+
+  .grid-card {
+    background: #ffffff;
+    border-radius: 20px;
+    padding: 30px;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.08);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .grid-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 8px;
+    /* This will be overridden by specific card colors */
+    background: #ccc;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+  }
+
+  .ug-grid-card::before {
+    background: linear-gradient(to right, #4361ee, #3a0ca3);
+  }
+
+  .pg-grid-card::before {
+    background: linear-gradient(to right, #f72585, #b5179e);
+  }
+
+  .phd-grid-card::before {
+    background: linear-gradient(to right, #4cc9f0, #4895ef);
+  }
+
+  .grid-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 45px rgba(0, 0, 0, 0.12);
+  }
+
+  .grid-icon {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+    font-size: 2.2rem;
+    color: #ffffff;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+  }
+
+  .ug-grid-card .grid-icon {
+    background: linear-gradient(135deg, #4361ee, #007bff);
+  }
+
+  .pg-grid-card .grid-icon {
+    background: linear-gradient(135deg, #f72585, #007bff);
+  }
+
+  .phd-grid-card .grid-icon {
+    background: linear-gradient(135deg, #4cc9f0, #007bff);
+  }
+
+  .grid-content h3 {
+    margin: 0 0 15px 0;
+    color: #333333;
+    font-size: 1.6rem;
+    font-weight: 700;
+  }
+
+  .duration-primary {
+    display: flex;
+    align-items: baseline;
+    justify-content: center;
+    margin-bottom: 10px;
+  }
+
+  .duration-value {
+    font-size: 3rem;
+    font-weight: 800;
+    line-height: 1;
+    margin-right: 8px;
+    background: linear-gradient(135deg, #333, #555);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  .ug-grid-card .duration-value {
+    background: linear-gradient(135deg, #4361ee, #3a0ca3);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  .pg-grid-card .duration-value {
+    background: linear-gradient(135deg, #f72585, #b5179e);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  .phd-grid-card .duration-value {
+    background: linear-gradient(135deg, #4cc9f0, #4895ef);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  .duration-unit {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: #555555;
+  }
+
+  .duration-secondary {
+    color: #777777;
+    font-size: 1rem;
+    margin-bottom: 20px;
+    line-height: 1.4;
+  }
+
+  .duration-progress-bar {
+    width: 100%;
+    height: 10px;
+    background: #e9ecef;
+    border-radius: 5px;
+    overflow: hidden;
+    margin-top: 15px;
+    display: flex;
+  }
+
+  .progress-segment {
+    height: 100%;
+    /* Colors defined below */
+  }
+
+  .progress-segment.academic {
+    background: #4361ee;
+  }
+
+  .progress-segment.internship {
+    background: #3a0ca3;
+  }
+
+  .progress-segment.pg {
+    background: #f72585;
+  }
+
+  .progress-segment.phd {
+    background: #4cc9f0;
+  }
+
+  /* Responsive Adjustments */
+  @media (max-width: 768px) {
+    .course-duration-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .grid-card {
+      padding: 25px;
+    }
+
+    .grid-icon {
+      width: 70px;
+      height: 70px;
+      font-size: 2rem;
+      margin-bottom: 15px;
+    }
+
+    .grid-content h3 {
+      font-size: 1.4rem;
+      margin-bottom: 10px;
+    }
+
+    .duration-value {
+      font-size: 2.5rem;
+    }
+
+    .duration-unit {
+      font-size: 1.1rem;
+    }
+
+    .duration-secondary {
+      font-size: 0.9rem;
+      margin-bottom: 15px;
+    }
+  }
+</style>
+
+        <!-- 6. Course Fees -->
+        <div class="section-title my-4"><i class="fas fa-money-bill-wave"></i> Course Fees (India & Abroad)</div>
+
+<div class="fees-container">
+  <!-- India Fees -->
+  <div class="fees-card india-card">
+    <div class="fees-header">
+      <i class="fas fa-rupee-sign"></i>
+      <h3>India</h3>
+    </div>
+    <div class="fees-content">
+      <div class="fee-item">
+        <div class="fee-icon">
+          <i class="fas fa-university"></i>
+        </div>
+        <div class="fee-details">
+          <span class="fee-type">Public colleges</span>
+          <span class="fee-amount">₹15,000 – ₹1,50,000 per year</span>
+        </div>
+      </div>
+      <div class="fee-item">
+        <div class="fee-icon">
+          <i class="fas fa-building"></i>
+        </div>
+        <div class="fee-details">
+          <span class="fee-type">Private colleges</span>
+          <span class="fee-amount">₹5,00,000 – ₹25,00,000 per year</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Abroad Fees -->
+  <div class="fees-card abroad-card">
+    <div class="fees-header">
+      <i class="fas fa-globe"></i>
+      <h3>Abroad</h3>
+    </div>
+    <div class="fees-content">
+      <div class="fee-item">
+        <div class="fee-icon">
+          <i class="fas fa-rupee-sign"></i>
+        </div>
+        <div class="fee-details">
+          <span class="fee-type">Russia, China, Bangladesh</span>
+          <span class="fee-amount">₹25L – ₹75L total</span>
+        </div>
+      </div>
+      <div class="fee-item">
+        <div class="fee-icon">
+          <i class="fas fa-rupee-sign"></i>
+        </div>
+        <div class="fee-details">
+          <span class="fee-type">USA, UK, Australia</span>
+          <span class="fee-amount">₹80L – ₹2Cr+ total</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<style>
+.fees-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 25px;
+  margin-top: 20px;
+}
+
+.fees-card {
+  background: white;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+  transition: transform 0.3s ease;
+}
+
+.fees-card:hover {
+  transform: translateY(-5px);
+}
+
+.fees-header {
+  padding: 18px 20px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  color: white;
+  font-size: 1.1rem;
+}
+
+.india-card .fees-header {
+  background: linear-gradient(135deg, #3a7bd5 0%, #00d2ff 100%);
+}
+
+.abroad-card .fees-header {
+  background: linear-gradient(135deg, #11998e 0%, #38ef7d 100%);
+}
+
+.fees-header i {
+  font-size: 1.4rem;
+}
+
+.fees-header h3 {
+  margin: 0;
+  font-weight: 600;
+}
+
+.fees-content {
+  padding: 20px;
+}
+
+.fee-item {
+  display: flex;
+  gap: 15px;
+  padding: 15px 0;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.fee-item:last-child {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+.fee-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.india-card .fee-icon {
+  background: rgba(0, 210, 255, 0.1);
+  color: #00d2ff;
+}
+
+.abroad-card .fee-icon {
+  background: rgba(56, 239, 125, 0.1);
+  color: #38ef7d;
+}
+
+.fee-icon i {
+  font-size: 1.1rem;
+}
+
+.fee-details {
+  display: flex;
+  flex-direction: column;
+}
+
+.fee-type {
+  font-weight: 500;
+  color: #333;
+  margin-bottom: 3px;
+}
+
+.fee-amount {
+  color: #666;
+  font-size: 0.95rem;
+}
+
+@media (max-width: 768px) {
+  .fees-container {
+    grid-template-columns: 1fr;
+  }
+  
+  .fees-header {
+    padding: 15px;
+  }
+  
+  .fee-item {
+    padding: 12px 0;
+  }
+}
+</style>
+
+        <!-- 7. Curriculum & Specializations -->
+        <div class="section-title my-4"><i class="fas fa-book"></i> Curriculum & Specializations</div>
+
+<div class="curriculum-modern">
+  <!-- Core Subjects -->
+  <div class="curriculum-block">
+    <div class="block-header" style="background: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%);">
+      <i class="fas fa-list"></i>
+      <h3>Core Subjects</h3>
+    </div>
+    <div class="block-content">
+      <div class="subject-card">
+        <div class="subject-icon"><i class="fas fa-notes-medical"></i></div>
+        <div class="subject-name">Anatomy</div>
+      </div>
+      <div class="subject-card">
+        <div class="subject-icon"><i class="fas fa-notes-medical"></i></div>
+        <div class="subject-name">Physiology</div>
+      </div>
+      <div class="subject-card">
+        <div class="subject-icon"><i class="fas fa-notes-medical"></i></div>
+        <div class="subject-name">Biochemistry</div>
+      </div>
+      <div class="subject-card">
+        <div class="subject-icon"><i class="fas fa-notes-medical"></i></div>
+        <div class="subject-name">Pathology</div>
+      </div>
+      <div class="subject-card">
+        <div class="subject-icon"><i class="fas fa-notes-medical"></i></div>
+        <div class="subject-name">Microbiology</div>
+      </div>
+      <div class="subject-card">
+        <div class="subject-icon"><i class="fas fa-notes-medical"></i></div>
+        <div class="subject-name">Pharmacology</div>
+      </div>
+      <div class="subject-card">
+        <div class="subject-icon"><i class="fas fa-notes-medical"></i></div>
+        <div class="subject-name">Forensic Medicine</div>
+      </div>
+      <div class="subject-card">
+        <div class="subject-icon"><i class="fas fa-notes-medical"></i></div>
+        <div class="subject-name">Internal Medicine</div>
+      </div>
+      <div class="subject-card">
+        <div class="subject-icon"><i class="fas fa-notes-medical"></i></div>
+        <div class="subject-name">Surgery</div>
+      </div>
+      <div class="subject-card">
+        <div class="subject-icon"><i class="fas fa-notes-medical"></i></div>
+        <div class="subject-name">Pediatrics</div>
+      </div>
+      <div class="subject-card">
+        <div class="subject-icon"><i class="fas fa-notes-medical"></i></div>
+        <div class="subject-name">Obstetrics & Gynecology</div>
+      </div>
+      <div class="subject-card">
+        <div class="subject-icon"><i class="fas fa-notes-medical"></i></div>
+        <div class="subject-name">Psychiatry</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Specializations -->
+  <div class="curriculum-block">
+    <div class="block-header" style="background: linear-gradient(135deg, #11998e 0%, #38ef7d 100%);">
+      <i class="fas fa-stethoscope"></i>
+      <h3>Specializations (PG Level)</h3>
+    </div>
+    <div class="block-content">
+      <div class="subject-card">
+        <div class="subject-icon"><i class="fas fa-user-md"></i></div>
+        <div class="subject-name">General Medicine</div>
+      </div>
+      <div class="subject-card">
+        <div class="subject-icon"><i class="fas fa-user-md"></i></div>
+        <div class="subject-name">General Surgery</div>
+      </div>
+      <div class="subject-card">
+        <div class="subject-icon"><i class="fas fa-user-md"></i></div>
+        <div class="subject-name">Pediatrics</div>
+      </div>
+      <div class="subject-card">
+        <div class="subject-icon"><i class="fas fa-user-md"></i></div>
+        <div class="subject-name">Orthopedics</div>
+      </div>
+      <div class="subject-card">
+        <div class="subject-icon"><i class="fas fa-user-md"></i></div>
+        <div class="subject-name">Dermatology</div>
+      </div>
+      <div class="subject-card">
+        <div class="subject-icon"><i class="fas fa-user-md"></i></div>
+        <div class="subject-name">Obstetrics & Gynecology</div>
+      </div>
+      <div class="subject-card">
+        <div class="subject-icon"><i class="fas fa-user-md"></i></div>
+        <div class="subject-name">Psychiatry</div>
+      </div>
+      <div class="subject-card">
+        <div class="subject-icon"><i class="fas fa-user-md"></i></div>
+        <div class="subject-name">Radiology</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<style>
+.curriculum-modern {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  margin-top: 25px;
+}
+
+.curriculum-block {
+  background: white;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+  transition: transform 0.3s ease;
+}
+
+.curriculum-block:hover {
+  transform: translateY(-5px);
+}
+
+.block-header {
+  padding: 20px;
+  color: white;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.block-header i {
+  font-size: 1.8rem;
+  filter: drop-shadow(0 2px 4px rgba(0,0,0,0.2));
+}
+
+.block-header h3 {
+  margin: 0;
+  font-size: 1.4rem;
+  font-weight: 700;
+  text-shadow: 0 1px 3px rgba(0,0,0,0.2);
+}
+
+.block-content {
+  padding: 20px;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 15px;
+}
+
+.subject-card {
+  background: #f8fafc;
+  border-radius: 10px;
+  padding: 15px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  transition: all 0.3s ease;
+}
+
+.subject-card:hover {
+  background: #fff;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+  transform: translateY(-3px);
+}
+
+.subject-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: rgba(0,123,255,0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.subject-icon i {
+  color: #007bff;
+  font-size: 1.1rem;
+}
+
+.subject-name {
+  font-weight: 500;
+  color: #2d3748;
+  flex: 1;
+}
+
+@media (max-width: 768px) {
+  .block-content {
+    grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+  }
+  
+  .block-header {
+    padding: 15px;
+  }
+  
+  .block-header h3 {
+    font-size: 1.2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .block-content {
+    grid-template-columns: 1fr;
+  }
+  
+  .subject-card {
+    padding: 12px;
+  }
+}
+</style>
+
+        <!-- 8. Key Skills Required -->
+        <div class="section-title mt-4"><i class="fas fa-tools"></i> Key Skills Required</div>
+
+<div class="skills-grid">
+  <!-- Technical Skills -->
+  <div class="skill-category">
+    <div class="category-header" style="background-color: #f8f9fa; color: #212529;">
+      <i class="fas fa-stethoscope" style="color: #007bff;"></i>
+      <h3>Technical</h3>
+    </div>
+    <div class="skill-items">
+      <div class="skill-item">
+        <i class="fas fa-diagnoses" style="color: #007bff;"></i>
+        <span>Clinical diagnosis and treatment skills</span>
+      </div>
+      <div class="skill-item">
+        <i class="fas fa-user-md" style="color: #007bff;"></i>
+        <span>Surgical techniques</span>
+      </div>
+      <div class="skill-item">
+        <i class="fas fa-microscope" style="color: #007bff;"></i>
+        <span>Use of medical equipment</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Analytical Skills -->
+  <div class="skill-category">
+    <div class="category-header" style="background-color: #f8f9fa; color: #212529;">
+      <i class="fas fa-brain" style="color: #007bff;"></i>
+      <h3>Analytical/Logical</h3>
+    </div>
+    <div class="skill-items">
+      <div class="skill-item">
+        <i class="fas fa-lightbulb" style="color: #007bff;"></i>
+        <span>Critical thinking</span>
+      </div>
+      <div class="skill-item">
+        <i class="fas fa-puzzle-piece" style="color: #007bff;"></i>
+        <span>Problem-solving</span>
+      </div>
+      <div class="skill-item">
+        <i class="fas fa-search" style="color: #007bff;"></i>
+        <span>Diagnostic reasoning</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Soft Skills -->
+  <div class="skill-category">
+    <div class="category-header" style="background-color: #f8f9fa; color: #212529;">
+      <i class="fas fa-users" style="color: #007bff;"></i>
+      <h3>Soft Skills</h3>
+    </div>
+    <div class="skill-items">
+      <div class="skill-item">
+        <i class="fas fa-comments" style="color: #007bff;"></i>
+        <span>Communication and empathy</span>
+      </div>
+      <div class="skill-item">
+        <i class="fas fa-handshake" style="color: #007bff;"></i>
+        <span>Teamwork and collaboration</span>
+      </div>
+      <div class="skill-item">
+        <i class="fas fa-clock" style="color: #007bff;"></i>
+        <span>Stress management</span>
+      </div>
+      <div class="skill-item">
+        <i class="fas fa-balance-scale" style="color: #007bff;"></i>
+        <span>Ethical decision-making</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<style>
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+  margin-top: 20px;
+}
+
+.skill-category {
+  background: white;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  border: 1px solid #e9ecef;
+}
+
+.category-header {
+  padding: 15px 20px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  border-bottom: 1px solid #e9ecef;
+}
+
+.category-header i {
+  font-size: 1.2rem;
+}
+
+.skill-items {
+  padding: 15px;
+}
+
+.skill-item {
+  display: flex;
+  align-items: center;
+  padding: 12px 10px;
+  border-bottom: 1px solid #eee;
+  gap: 12px;
+}
+
+.skill-item:last-child {
+  border-bottom: none;
+}
+
+.skill-item i {
+  width: 24px;
+  text-align: center;
+  font-size: 1.1rem;
+}
+
+@media (max-width: 768px) {
+  .skills-grid {
+    grid-template-columns: 1fr;
+  }
+}
+</style>
+
+        <!-- 9. International Exposure & Study Abroad Options -->
+        <div class="section-title mt-4"><i class="fas fa-globe-americas"></i> International Exposure & Study Abroad Options</div>
+<div class="row">
+    <div class="col-md-3 col-sm-6 mb-4">
+        <div class="card h-100">
+            <div class="card-body text-center">
+                <i class="fas fa-exchange-alt fa-3x mb-3 text-primary"></i>
+                <h5 class="card-title">Student Exchange Programs</h5>
+                <p class="card-text">Global medical university exchange opportunities</p>
+            </div>
+        </div>
+    </div>
+    
+    <div class="col-md-3 col-sm-6 mb-4">
+        <div class="card h-100">
+            <div class="card-body text-center">
+                <i class="fas fa-users fa-3x mb-3 text-success"></i>
+                <h5 class="card-title">Conferences & Workshops</h5>
+                <p class="card-text">International medical conferences and workshops</p>
+            </div>
+        </div>
+    </div>
+    
+    <div class="col-md-3 col-sm-6 mb-4">
+        <div class="card h-100">
+            <div class="card-body text-center">
+                <i class="fas fa-map-marked-alt fa-3x mb-3 text-info"></i>
+                <h5 class="card-title">Study Abroad Destinations</h5>
+                <p class="card-text">USA, UK, Australia, Germany, Russia, China</p>
+            </div>
+        </div>
+    </div>
+    
+    <div class="col-md-3 col-sm-6 mb-4">
+        <div class="card h-100">
+            <div class="card-body text-center">
+                <i class="fas fa-award fa-3x mb-3 text-warning"></i>
+                <h5 class="card-title">Scholarships</h5>
+                <p class="card-text">DAAD, Erasmus+, Fulbright, Chevening and more</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+        <!-- 10. Career Pathways -->
+
+        <section class="container my-5">
+            <h2 class="mb-4 text-dark"><i class="fas fa-road text-primary"></i> Career Pathways</h2>
+
+            <!-- Path 1 -->
+            <div class="mb-5 rounded">
+                <h4 class="fw-bold">Path 1</h4>
+                <div class="d-flex flex-wrap align-items-center bg-light rounded-4 overflow-hidden shadow">
+                    <div class="p-4 flex-grow-1 bg-white">
+                        <p class="mb-0 fw-semibold">Stream :</p>
+                        <p class="mb-0">XII in any stream</p>
+                    </div>
+                    <div class="p-4 flex-grow-1 bg-primary text-white">
+                        <p class="mb-0 fw-semibold">Graduation :</p>
+                        <p class="mb-0">Diploma in sound engineering</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Path 2 -->
+            <div>
+                <h4 class="fw-bold">Path 2</h4>
+                <div class="d-flex flex-wrap align-items-center bg-light rounded-4 overflow-hidden shadow">
+                    <div class="p-4 flex-grow-1 bg-white">
+                        <p class="mb-0 fw-semibold">Stream :</p>
+                        <p class="mb-0">XII in any stream</p>
+                    </div>
+                    <div class="p-4 flex-grow-1 bg-primary text-white">
+                        <p class="mb-0 fw-semibold">Graduation :</p>
+                        <p class="mb-0">Certificate in creative arts digital sound</p>
+                    </div>
+                    <div class="p-4 flex-grow-1 bg-white">
+                        <p class="mb-0 fw-semibold">After Graduation :</p>
+                        <p class="mb-0">Certificate in audio technology</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        
+
+        <!-- 11. Job Roles & Top Recruiters -->
+        <style>
+        body {
+            font-family: 'Roboto', sans-serif;
             color: #333;
             line-height: 1.6;
         }
@@ -32,13 +1995,10 @@
             align-items: center;
             transition: color 0.3s ease;
         }
-        .section-title:hover {
-            color: #000;
-        }
         .section-title i {
             margin-right: 0.75rem;
             font-size: 1.5rem;
-            color:#007bff;
+            color: #007bff;
         }
         .subsection-title {
             font-size: 1.5rem;
@@ -47,10 +2007,6 @@
             color: #000;
             display: flex;
             align-items: center;
-            transition: color 0.3s ease;
-        }
-        .subsection-title:hover {
-            color: #000;
         }
         .subsection-title i {
             margin-right: 0.5rem;
@@ -70,44 +2026,41 @@
             transform: translateY(-5px);
             box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
         }
-        .list-group-item {
-            border: none;
-            padding: 0.75rem 0;
-            display: flex;
-            align-items: center;
-            font-size: 1rem;
-            transition: background 0.2s ease;
-        }
-        .list-group-item:hover {
-            background: #f1f9ff;
-            border-radius: 8px;
-        }
-        .list-group-item i {
-            margin-right: 0.75rem;
-            color: #007bff;
-        }
-        .table {
-            background: #fff;
-            border-radius: 8px;
-            overflow: hidden;
-        }
-        .table th, .table td {
+        .job-card, .recruiter-card {
+            border-radius: 1rem;
             padding: 1rem;
-            vertical-align: middle;
+            box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
+            height: 100%;
+            transition: transform 0.3s ease, background 0.3s ease;
+            background: #fff;
         }
-        .table th i {
-            margin-right: 0.5rem;
+        .job-card:nth-child(even), .recruiter-card:nth-child(even) {
+            background: #f8f9fa;
         }
-        .table tbody tr:hover {
-            background: #f1f9ff;
+        .job-card:hover, .recruiter-card:hover {
+            transform: scale(1.05);
+            background: linear-gradient(145deg, #f1f9ff, #fff);
         }
-        p {
-            font-size: 1rem;
-            margin-bottom: 1rem;
+        .job-card i, .recruiter-card i {
+            font-size: 2rem;
+            color: #007bff;
+            margin-bottom: 0.5rem;
+            transition: transform 0.3s ease;
         }
-        p i {
-            margin-right: 0.5rem;
+        .job-card:hover i, .recruiter-card:hover i {
+            transform: scale(1.2);
+        }
+        .job-card h5, .recruiter-card h5 {
+            font-size: 1.25rem;
+            margin: 0.5rem 0;
             color: #000;
+        }
+        .badge-subsection {
+            font-size: 1.25rem;
+            font-weight: 500;
+            padding: 0.5rem 1rem;
+            margin: 1.5rem 0 1rem;
+            display: inline-block;
         }
         /* Mobile Responsiveness */
         @media (max-width: 768px) {
@@ -116,385 +2069,1956 @@
             }
             .section-title {
                 font-size: 1.8rem;
+                margin-bottom: 1rem;
             }
-            .subsection-title {
-                font-size: 1.4rem;
+            .subsection-title, .badge-subsection {
+                font-size: 1.3rem;
+                margin: 1rem 0 0.75rem;
             }
             .card {
                 padding: 1rem;
                 margin-bottom: 1.5rem;
             }
-            .list-group-item {
-                font-size: 0.95rem;
-                padding: 0.5rem 0;
-            }
-            .table th, .table td {
-                font-size: 0.9rem;
+            .job-card, .recruiter-card {
                 padding: 0.75rem;
+            }
+            .job-card h5, .recruiter-card h5 {
+                font-size: 1.1rem;
+            }
+            .job-card i, .recruiter-card i {
+                font-size: 1.8rem;
             }
         }
         @media (max-width: 576px) {
             .section-title {
                 font-size: 1.6rem;
             }
-            .subsection-title {
-                font-size: 1.3rem;
+            .subsection-title, .badge-subsection {
+                font-size: 1.2rem;
             }
             .card {
                 padding: 0.75rem;
             }
-            .list-group-item {
-                font-size: 0.9rem;
+            .job-card, .recruiter-card {
+                padding: 0.5rem;
             }
-            .table {
-                font-size: 0.85rem;
+            .job-card h5, .recruiter-card h5 {
+                font-size: 1rem;
+            }
+            .job-card i, .recruiter-card i {
+                font-size: 1.5rem;
             }
         }
     </style>
-</head>
-<body>
 
-
-    <!-- sec start -->
     <div class="container">
-        <!-- 1. Course Overview -->
-        <div class="section-title"><i class="fas fa-book-medical"></i> Course Overview</div>
+        <!-- 15. Job Roles & Top Recruiters -->
         <div class="card">
-            <p>The MBBS (Bachelor of Medicine and Bachelor of Surgery) is a comprehensive 5.5-year undergraduate program that trains students to become qualified medical doctors. The program integrates a 4.5-year academic curriculum with a compulsory 1-year clinical internship. MBBS equips students with in-depth theoretical knowledge and hands-on clinical skills essential for diagnosing and treating a wide range of health conditions. It plays a vital role in strengthening healthcare systems and improving public health outcomes globally.</p>
-        </div>
-
-        <!-- 2. Who Should Pursue This Course? -->
-        <div class="section-title"><i class="fas fa-user-md"></i> Who Should Pursue This Course?</div>
-        <div class="card">
-            <ul class="list-group">
-                <li class="list-group-item"><i class="fas fa-heart"></i> Students passionate about healthcare and helping others</li>
-                <li class="list-group-item"><i class="fas fa-flask"></i> Interest in Biology, Chemistry, and Life Sciences</li>
-                <li class="list-group-item"><i class="fas fa-brain"></i> Aptitude for problem-solving and analytical thinking</li>
-                <li class="list-group-item"><i class="fas fa-briefcase-medical"></i> Willingness to work in high-pressure environments</li>
-                <li class="list-group-item"><i class="fas fa-stethoscope"></i> Aspiration to pursue careers in clinical practice, medical research, public health, or medical education</li>
-            </ul>
-        </div>
-
-        <!-- 3. Eligibility Criteria -->
-        <div class="section-title"><i class="fas fa-clipboard-check"></i> Eligibility Criteria</div>
-        <div class="card">
-            <div class="subsection-title"><i class="fas fa-graduation-cap"></i> UG</div>
-            <ul class="list-group">
-                <li class="list-group-item"><i class="fas fa-school"></i> 10+2 (Higher Secondary) in Science stream with Physics, Chemistry, Biology/Biotechnology</li>
-                <li class="list-group-item"><i class="fas fa-percentage"></i> Minimum 50% aggregate marks (General category), 40% (Reserved categories)</li>
-                <li class="list-group-item"><i class="fas fa-user-clock"></i> Minimum age: 17 years</li>
-            </ul>
-            <div class="subsection-title"><i class="fas fa-user-graduate"></i> PG</div>
-            <ul class="list-group">
-                <li class="list-group-item"><i class="fas fa-certificate"></i> MBBS degree from a recognized institution</li>
-                <li class="list-group-item"><i class="fas fa-file-alt"></i> Internship completion certificate</li>
-                <li class="list-group-item"><i class="fas fa-file-medical"></i> NEET-PG qualification required for MD/MS programs</li>
-            </ul>
-            <div class="subsection-title"><i class="fas fa-globe"></i> Others</div>
-            <ul class="list-group">
-                <li class="list-group-item"><i class="fas fa-language"></i> English proficiency required for abroad programs</li>
-                <li class="list-group-item"><i class="fas fa-passport"></i> Age eligibility per individual country/university regulations</li>
-            </ul>
-        </div>
-
-        <!-- 4. Entrance Exams & Admission Process -->
-        <div class="section-title"><i class="fas fa-file-signature"></i> Entrance Exams & Admission Process</div>
-        <div class="card">
-            <div class="subsection-title"><i class="fas fa-user-graduate"></i> UG</div>
-            <ul class="list-group">
-                <li class="list-group-item"><i class="fas fa-file-medical"></i> NEET-UG (Mandatory for all MBBS admissions in India)</li>
-            </ul>
-            <div class="subsection-title"><i class="fas fa-user-graduate"></i> PG</div>
-            <ul class="list-group">
-                <li class="list-group-item"><i class="fas fa-file-medical"></i> NEET-PG (Mandatory for MD/MS admissions in India)</li>
-            </ul>
-            <div class="subsection-title"><i class="fas fa-globe"></i> Others</div>
-            <ul class="list-group">
-                <li class="list-group-item"><i class="fas fa-university"></i> Direct Admission in select private colleges under Management Quota</li>
-            </ul>
-        </div>
-
-        <!-- 5. Course Duration -->
-        <div class="section-title"><i class="fas fa-clock"></i> Course Duration</div>
-        <div class="card">
-            <ul class="list-group">
-                <li class="list-group-item"><i class="fas fa-user-graduate"></i> UG: 5.5 years (4.5 years academic + 1-year internship)</li>
-                <li class="list-group-item"><i class="fas fa-user-graduate"></i> PG (MD/MS): 2–3 years</li>
-                <li class="list-group-item"><i class="fas fa-graduation-cap"></i> PhD: 2–3 years (optional after PG)</li>
-            </ul>
-        </div>
-
-        <!-- 6. Course Fees -->
-        <div class="section-title"><i class="fas fa-money-bill-wave"></i> Course Fees (India & Abroad)</div>
-        <div class="card">
-            <div class="subsection-title"><i class="fas fa-rupee-sign"></i> India</div>
-            <ul class="list-group">
-                <li class="list-group-item"><i class="fas fa-university"></i> Public colleges: ₹15,000 – ₹1,50,000 per year</li>
-                <li class="list-group-item"><i class="fas fa-building"></i> Private colleges: ₹5,00,000 – ₹25,00,000 per year</li>
-            </ul>
-            <div class="subsection-title"><i class="fas fa-globe"></i> Abroad</div>
-            <ul class="list-group">
-                <li class="list-group-item"><i class="fas fa-rupee-sign"></i> ₹25L – ₹75L total (Russia, China, Bangladesh)</li>
-                <li class="list-group-item"><i class="fas fa-rupee-sign"></i> ₹80L – ₹2Cr+ total (USA, UK, Australia)</li>
-            </ul>
-        </div>
-
-        <!-- 7. Curriculum & Specializations -->
-        <div class="section-title"><i class="fas fa-book"></i> Curriculum & Specializations</div>
-        <div class="card">
-            <div class="subsection-title"><i class="fas fa-list"></i> Core Subjects</div>
-            <ul class="list-group">
-                <li class="list-group-item"><i class="fas fa-notes-medical"></i> Anatomy</li>
-                <li class="list-group-item"><i class="fas fa-notes-medical"></i> Physiology</li>
-                <li class="list-group-item"><i class="fas fa-notes-medical"></i> Biochemistry</li>
-                <li class="list-group-item"><i class="fas fa-notes-medical"></i> Pathology</li>
-                <li class="list-group-item"><i class="fas fa-notes-medical"></i> Microbiology</li>
-                <li class="list-group-item"><i class="fas fa-notes-medical"></i> Pharmacology</li>
-                <li class="list-group-item"><i class="fas fa-notes-medical"></i> Forensic Medicine</li>
-                <li class="list-group-item"><i class="fas fa-notes-medical"></i> Internal Medicine</li>
-                <li class="list-group-item"><i class="fas fa-notes-medical"></i> Surgery</li>
-                <li class="list-group-item"><i class="fas fa-notes-medical"></i> Pediatrics</li>
-                <li class="list-group-item"><i class="fas fa-notes-medical"></i> Obstetrics & Gynecology</li>
-                <li class="list-group-item"><i class="fas fa-notes-medical"></i> Psychiatry</li>
-            </ul>
-            <div class="subsection-title"><i class="fas fa-stethoscope"></i> Specializations (PG Level)</div>
-            <ul class="list-group">
-                <li class="list-group-item"><i class="fas fa-user-md"></i> General Medicine</li>
-                <li class="list-group-item"><i class="fas fa-user-md"></i> General Surgery</li>
-                <li class="list-group-item"><i class="fas fa-user-md"></i> Pediatrics</li>
-                <li class="list-group-item"><i class="fas fa-user-md"></i> Orthopedics</li>
-                <li class="list-group-item"><i class="fas fa-user-md"></i> Dermatology</li>
-                <li class="list-group-item"><i class="fas fa-user-md"></i> Obstetrics & Gynecology</li>
-                <li class="list-group-item"><i class="fas fa-user-md"></i> Psychiatry</li>
-                <li class="list-group-item"><i class="fas fa-user-md"></i> Radiology</li>
-            </ul>
-        </div>
-
-        <!-- 8. Key Skills Required -->
-        <div class="section-title"><i class="fas fa-tools"></i> Key Skills Required</div>
-        <div class="card">
-            <div class="subsection-title"><i class="fas fa-stethoscope"></i> Technical</div>
-            <ul class="list-group">
-                <li class="list-group-item"><i class="fas fa-diagnoses"></i> Clinical diagnosis and treatment skills</li>
-                <li class="list-group-item"><i class="fas fa-user-md"></i> Surgical techniques</li>
-                <li class="list-group-item"><i class="fas fa-microscope"></i> Use of medical equipment</li>
-            </ul>
-            <div class="subsection-title"><i class="fas fa-brain"></i> Analytical/Logical</div>
-            <ul class="list-group">
-                <li class="list-group-item"><i class="fas fa-lightbulb"></i> Critical thinking</li>
-                <li class="list-group-item"><i class="fas fa-puzzle-piece"></i> Problem-solving</li>
-                <li class="list-group-item"><i class="fas fa-search"></i> Diagnostic reasoning</li>
-            </ul>
-            <div class="subsection-title"><i class="fas fa-users"></i> Soft Skills</div>
-            <ul class="list-group">
-                <li class="list-group-item"><i class="fas fa-comments"></i> Communication and empathy</li>
-                <li class="list-group-item"><i class="fas fa-handshake"></i> Teamwork and collaboration</li>
-                <li class="list-group-item"><i class="fas fa-clock"></i> Stress management</li>
-                <li class="list-group-item"><i class="fas fa-balance-scale"></i> Ethical decision-making</li>
-            </ul>
-        </div>
-
-        <!-- 9. International Exposure & Study Abroad Options -->
-        <div class="section-title"><i class="fas fa-globe-americas"></i> International Exposure & Study Abroad Options</div>
-        <div class="card">
-            <ul class="list-group">
-                <li class="list-group-item"><i class="fas fa-exchange-alt"></i> Student exchange programs with global medical universities</li>
-                <li class="list-group-item"><i class="fas fa-users"></i> International conferences and workshops</li>
-                <li class="list-group-item"><i class="fas fa-map-marked-alt"></i> Study abroad destinations: USA, UK, Australia, Germany, Russia, China</li>
-                <li class="list-group-item"><i class="fas fa-award"></i> Scholarships: DAAD, Erasmus+, Fulbright, Chevening</li>
-            </ul>
-        </div>
-
-        <!-- 10. Career Pathways -->
-        <div class="section-title"><i class="fas fa-road"></i> Career Pathways</div>
-        <div class="card">
-            <table class="table table-bordered">
-                <thead>
-                    <tr>
-                        <th><i class="fas fa-stream"></i> Stream</th>
-                        <th><i class="fas fa-user-graduate"></i> UG (5.5 years)</th>
-                        <th><i class="fas fa-user-graduate"></i> PG (2–3 years)</th>
-                        <th><i class="fas fa-graduation-cap"></i> Research (2–3 years)</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td><i class="fas fa-path"></i> Path 1</td>
-                        <td>MBBS</td>
-                        <td>MD/MS</td>
-                        <td>PhD in Medical Science</td>
-                    </tr>
-                    <tr>
-                        <td><i class="fas fa-path"></i> Path 2</td>
-                        <td>MBBS</td>
-                        <td>MBA Healthcare Management</td>
-                        <td>PhD in Public Health</td>
-                    </tr>
-                </tbody>
-            </table>
-        </div>
-
-        <!-- 11. Job Roles & Top Recruiters -->
-        <div class="section-title"><i class="fas fa-briefcase"></i> Job Roles & Top Recruiters</div>
-        <div class="card">
+            <div class="section-title"><i class="fas fa-briefcase"></i> Job Roles & Top Recruiters</div>
+            <!-- Job Roles -->
             <div class="subsection-title"><i class="fas fa-user-md"></i> Job Roles</div>
-            <ul class="list-group">
-                <li class="list-group-item"><i class="fas fa-stethoscope"></i> General Practitioner</li>
-                <li class="list-group-item"><i class="fas fa-user-md"></i> Specialist Doctor (Cardiologist, Neurologist, etc.)</li>
-                <li class="list-group-item"><i class="fas fa-user-md"></i> Surgeon</li>
-                <li class="list-group-item"><i class="fas fa-microscope"></i> Medical Researcher</li>
-                <li class="list-group-item"><i class="fas fa-globe"></i> Public Health Professional</li>
-                <li class="list-group-item"><i class="fas fa-chalkboard-teacher"></i> Medical Educator</li>
-                <li class="list-group-item"><i class="fas fa-hospital"></i> Healthcare Administrator</li>
-            </ul>
+            <div class="row">
+                <div class="col-md-4 col-sm-4 col-12 mb-3">
+                    <div class="job-card text-center">
+                        <i class="fas fa-stethoscope"></i>
+                        <h5>General Practitioner</h5>
+                    </div>
+                </div>
+                <div class="col-md-4 col-sm-4 col-12 mb-3">
+                    <div class="job-card text-center">
+                        <i class="fas fa-user-md"></i>
+                        <h5>Specialist Doctor (Cardiologist, Neurologist, etc.)</h5>
+                    </div>
+                </div>
+                <div class="col-md-4 col-sm-4 col-12 mb-3">
+                    <div class="job-card text-center">
+                        <i class="fas fa-user-md"></i>
+                        <h5>Surgeon</h5>
+                    </div>
+                </div>
+                <div class="col-md-4 col-sm-4 col-12 mb-3">
+                    <div class="job-card text-center">
+                        <i class="fas fa-microscope"></i>
+                        <h5>Medical Researcher</h5>
+                    </div>
+                </div>
+                <div class="col-md-4 col-sm-4 col-12 mb-3">
+                    <div class="job-card text-center">
+                        <i class="fas fa-globe"></i>
+                        <h5>Public Health Professional</h5>
+                    </div>
+                </div>
+                <div class="col-md-4 col-sm-4 col-12 mb-3">
+                    <div class="job-card text-center">
+                        <i class="fas fa-chalkboard-teacher"></i>
+                        <h5>Medical Educator</h5>
+                    </div>
+                </div>
+                <div class="col-md-4 col-sm-4 col-12 mb-3">
+                    <div class="job-card text-center">
+                        <i class="fas fa-hospital"></i>
+                        <h5>Healthcare Administrator</h5>
+                    </div>
+                </div>
+            </div>
+            <!-- Top Recruiters -->
             <div class="subsection-title"><i class="fas fa-building"></i> Top Recruiters</div>
-            <div class="subsection-title"><i class="fas fa-flag"></i> India</div>
-            <ul class="list-group">
-                <li class="list-group-item"><i class="fas fa-hospital-alt"></i> AIIMS</li>
-                <li class="list-group-item"><i class="fas fa-hospital-alt"></i> Apollo Hospitals</li>
-                <li class="list-group-item"><i class="fas fa-hospital-alt"></i> Fortis Healthcare</li>
-                <li class="list-group-item"><i class="fas fa-hospital-alt"></i> Max Healthcare</li>
-                <li class="list-group-item"><i class="fas fa-hospital-alt"></i> Manipal Hospitals</li>
-                <li class="list-group-item"><i class="fas fa-university"></i> Government Medical Colleges</li>
-                <li class="list-group-item"><i class="fas fa-shield-alt"></i> Indian Armed Forces</li>
-            </ul>
-            <div class="subsection-title"><i class="fas fa-globe"></i> Global</div>
-            <ul class="list-group">
-                <li class="list-group-item"><i class="fas fa-hospital-alt"></i> NHS (UK)</li>
-                <li class="list-group-item"><i class="fas fa-hospital-alt"></i> Mayo Clinic (USA)</li>
-                <li class="list-group-item"><i class="fas fa-hospital-alt"></i> Cleveland Clinic (USA)</li>
-                <li class="list-group-item"><i class="fas fa-hospital-alt"></i> Mount Sinai (USA)</li>
-                <li class="list-group-item"><i class="fas fa-hospital-alt"></i> Johns Hopkins Hospital (USA)</li>
-                <li class="list-group-item"><i class="fas fa-globe"></i> WHO</li>
-                <li class="list-group-item"><i class="fas fa-globe"></i> UNICEF</li>
-            </ul>
-        </div>
-
-        <!-- 12. Salary Insights -->
-        <div class="section-title"><i class="fas fa-wallet"></i> Salary Insights (India & Abroad)</div>
-        <div class="card">
-            <ul class="list-group">
-                <li class="list-group-item"><i class="fas fa-rupee-sign"></i> Freshers (India): ₹3L – ₹6L per annum</li>
-                <li class="list-group-item"><i class="fas fa-rupee-sign"></i> Mid-Level (India): ₹7L – ₹12L per annum</li>
-                <li class="list-group-item"><i class="fas fa-dollar-sign"></i> Abroad Salary: ₹60L – ₹120L per annum (USD 80K – 160K approx.)</li>
-            </ul>
-        </div>
-
-        <!-- 13. Top Colleges – India -->
-        <div class="section-title"><i class="fas fa-university"></i> Top Colleges – India</div>
-        <div class="card">
-            <ul class="list-group">
-                <li class="list-group-item"><i class="fas fa-building"></i> AIIMS Delhi</li>
-                <li class="list-group-item"><i class="fas fa-building"></i> AFMC Pune</li>
-                <li class="list-group-item"><i class="fas fa-building"></i> Maulana Azad Medical College, Delhi</li>
-                <li class="list-group-item"><i class="fas fa-building"></i> Kasturba Medical College, Manipal</li>
-                <li class="list-group-item"><i class="fas fa-building"></i> St. John’s Medical College, Bangalore</li>
-                <li class="list-group-item"><i class="fas fa-building"></i> King George's Medical University, Lucknow</li>
-                <li class="list-group-item"><i class="fas fa-building"></i> Grant Medical College, Mumbai</li>
-                <li class="list-group-item"><i class="fas fa-building"></i> Seth GS Medical College, Mumbai</li>
-                <li class="list-group-item"><i class="fas fa-building"></i> Institute of Medical Sciences, BHU Varanasi</li>
-                <li class="list-group-item"><i class="fas fa-building"></i> Vardhman Mahavir Medical College, Delhi</li>
-                <li class="list-group-item"><i class="fas fa-building"></i> Osmania Medical College, Hyderabad</li>
-                <li class="list-group-item"><i class="fas fa-building"></i> Bangalore Medical College and Research Institute</li>
-                <li class="list-group-item"><i class="fas fa-building"></i> Lady Hardinge Medical College, Delhi</li>
-                <li class="list-group-item"><i class="fas fa-building"></i> JIPMER Puducherry</li>
-                <li class="list-group-item"><i class="fas fa-building"></i> BJ Medical College, Ahmedabad</li>
-            </ul>
-        </div>
-
-        <!-- 14. Top Colleges – World -->
-        <div class="section-title"><i class="fas fa-globe"></i> Top Colleges – World</div>
-        <div class="card">
-            <ul class="list-group">
-                <li class="list-group-item"><i class="fas fa-university"></i> Harvard University, USA</li>
-                <li class="list-group-item"><i class="fas fa-university"></i> University of Oxford, UK</li>
-                <li class="list-group-item"><i class="fas fa-university"></i> University of Cambridge, UK</li>
-                <li class="list-group-item"><i class="fas fa-university"></i> Stanford University, USA</li>
-                <li class="list-group-item"><i class="fas fa-university"></i> Johns Hopkins University, USA</li>
-                <li class="list-group-item"><i class="fas fa-university"></i> University of California, San Francisco, USA</li>
-                <li class="list-group-item"><i class="fas fa-university"></i> Karolinska Institute, Sweden</li>
-                <li class="list-group-item"><i class="fas fa-university"></i> University of Melbourne, Australia</li>
-                <li class="list-group-item"><i class="fas fa-university"></i> Imperial College London, UK</li>
-                <li class="list-group-item"><i class="fas fa-university"></i> University of Toronto, Canada</li>
-                <li class="list-group-item"><i class="fas fa-university"></i> University of Tokyo, Japan</li>
-                <li class="list-group-item"><i class="fas fa-university"></i> National University of Singapore</li>
-                <li class="list-group-item"><i class="fas fa-university"></i> University of Sydney, Australia</li>
-                <li class="list-group-item"><i class="fas fa-university"></i> University of Edinburgh, UK</li>
-                <li class="list-group-item"><i class="fas fa-university"></i> Yale University, USA</li>
-            </ul>
-        </div>
-
-        <!-- 15. Top Colleges – Tamil Nadu -->
-        <div class="section-title"><i class="fas fa-university"></i> Top Colleges – Tamil Nadu</div>
-        <div class="card">
-            <ul class="list-group">
-                <li class="list-group-item"><i class="fas fa-building"></i> Madras Medical College, Chennai</li>
-                <li class="list-group-item"><i class="fas fa-building"></i> Stanley Medical College, Chennai</li>
-                <li class="list-group-item"><i class="fas fa-building"></i> Kilpauk Medical College, Chennai</li>
-                <li class="list-group-item"><i class="fas fa-building"></i> PSG Institute of Medical Sciences, Coimbatore</li>
-                <li class="list-group-item"><i class="fas fa-building"></i> Coimbatore Medical College</li>
-                <li class="list-group-item"><i class="fas fa-building"></i> Government Rajaji Medical College, Madurai</li>
-                <li class="list-group-item"><i class="fas fa-building"></i> Government Medical College, Trichy</li>
-                <li class="list-group-item"><i class="fas fa-building"></i> Government Medical College, Thanjavur</li>
-                <li class="list-group-item"><i class="fas fa-building"></i> Government Medical College, Tirunelveli</li>
-                <li class="list-group-item"><i class="fas fa-building"></i> Government Medical College, Erode</li>
-                <li class="list-group-item"><i class="fas fa-building"></i> Government Medical College, Theni</li>
-                <li class="list-group-item"><i class="fas fa-building"></i> Government Medical College, Omandurar (Chennai)</li>
-                <li class="list-group-item"><i class="fas fa-building"></i> SRM Medical College Hospital & Research Centre, Kanchipuram</li>
-                <li class="list-group-item"><i class="fas fa-building"></i> Government Mohan Kumaramangalam Medical College, Salem</li>
-            </ul>
-        </div>
-
-        <!-- 16. Benefits of Choosing This Course -->
-        <div class="section-title"><i class="fas fa-heartbeat"></i> Benefits of Choosing This Course</div>
-        <div class="card">
-            <ul class="list-group">
-                <li class="list-group-item"><i class="fas fa-hands-helping"></i> Opportunity to save lives and contribute to society</li>
-                <li class="list-group-item"><i class="fas fa-briefcase"></i> Strong demand and job security worldwide</li>
-                <li class="list-group-item"><i class="fas fa-briefcase"></i> Diverse career options in clinical practice, research, public health, and education</li>
-                <li class="list-group-item"><i class="fas fa-wallet"></i> High earning potential with global mobility</li>
-                <li class="list-group-item"><i class="fas fa-graduation-cap"></i> Continuous learning and professional growth</li>
-            </ul>
-        </div>
-
-        <!-- 17. Advantages and Disadvantages -->
-        <div class="section-title"><i class="fas fa-balance-scale"></i> Advantages and Disadvantages</div>
-        <div class="card">
-            <div class="subsection-title"><i class="fas fa-thumbs-up"></i> Advantages</div>
-            <ul class="list-group">
-                <li class="list-group-item"><i class="fas fa-briefcase"></i> Multiple job sectors across healthcare</li>
-                <li class="list-group-item"><i class="fas fa-globe"></i> Global opportunities through international licensing exams</li>
-                <li class="list-group-item"><i class="fas fa-lightbulb"></i> High innovation scope in medical research and technology</li>
-                <li class="list-group-item"><i class="fas fa-award"></i> Societal respect and recognition</li>
-            </ul>
-            <div class="subsection-title"><i class="fas fa-thumbs-down"></i> Disadvantages</div>
-            <ul class="list-group">
-                <li class="list-group-item"><i class="fas fa-trophy"></i> Intense competition for MBBS admission and specialization</li>
-                <li class="list-group-item"><i class="fas fa-clock"></i> Long duration of study and training</li>
-                <li class="list-group-item"><i class="fas fa-heartbeat"></i> High academic and work-related stress</li>
-                <li class="list-group-item"><i class="fas fa-wallet"></i> Modest starting salaries in public healthcare settings</li>
-            </ul>
-        </div>
-
-        <!-- 18. FAQs & Student Queries -->
-        <div class="section-title"><i class="fas fa-question-circle"></i> FAQs & Student Queries</div>
-        <div class="card">
-            <div class="subsection-title"><i class="fas fa-question"></i> Q1. How difficult is it to get into MBBS?</div>
-            <p><i class="fas fa-info-circle"></i> Ans. Admission to MBBS is highly competitive in India; cracking NEET-UG with a good score is essential.</p>
-            <div class="subsection-title"><i class="fas fa-question"></i> Q2. Can I switch to other healthcare careers after MBBS?</div>
-            <p><i class="fas fa-info-circle"></i> Ans. Yes, MBBS graduates can explore public health, hospital administration, research, and teaching roles.</p>
-            <div class="subsection-title"><i class="fas fa-question"></i> Q3. What are the PG options after MBBS?</div>
-            <p><i class="fas fa-info-circle"></i> Ans. MD/MS in various specialties, DNB programs, MPH (Public Health), MBA in Hospital Administration.</p>
-            <div class="subsection-title"><i class="fas fa-question"></i> Q4. What is the workload like for MBBS students and doctors?</div>
-            <p><i class="fas fa-info-circle"></i> Ans. The academic load is heavy, and the profession demands long working hours and emergency duty readiness.</p>
-            <div class="subsection-title"><i class="fas fa-question"></i> Q5. Is an MBBS degree from abroad valid in India?</div>
-            <p><i class="fas fa-info-circle"></i> Ans. Yes, provided the foreign MBBS degree is recognized by the NMC (India), and the graduate clears the FMGE (Foreign Medical Graduate Examination).</p>
+            <!-- India -->
+            <span class="badge badge-subsection bg-primary text-white"><i class="fas fa-flag"></i> India</span>
+            <div class="row">
+                <div class="col-md-4 col-sm-6 col-12 mb-3">
+                    <div class="recruiter-card text-center">
+                        <i class="fas fa-hospital-alt"></i>
+                        <h5>AIIMS</h5>
+                    </div>
+                </div>
+                <div class="col-md-4 col-sm-6 col-12 mb-3">
+                    <div class="recruiter-card text-center">
+                        <i class="fas fa-hospital-alt"></i>
+                        <h5>Apollo Hospitals</h5>
+                    </div>
+                </div>
+                <div class="col-md-4 col-sm-6 col-12 mb-3">
+                    <div class="recruiter-card text-center">
+                        <i class="fas fa-hospital-alt"></i>
+                        <h5>Fortis Healthcare</h5>
+                    </div>
+                </div>
+                <div class="col-md-4 col-sm-6 col-12 mb-3">
+                    <div class="recruiter-card text-center">
+                        <i class="fas fa-hospital-alt"></i>
+                        <h5>Max Healthcare</h5>
+                    </div>
+                </div>
+                <div class="col-md-4 col-sm-6 col-12 mb-3">
+                    <div class="recruiter-card text-center">
+                        <i class="fas fa-hospital-alt"></i>
+                        <h5>Manipal Hospitals</h5>
+                    </div>
+                </div>
+                <div class="col-md-4 col-sm-6 col-12 mb-3">
+                    <div class="recruiter-card text-center">
+                        <i class="fas fa-university"></i>
+                        <h5>Government Medical Colleges</h5>
+                    </div>
+                </div>
+                <div class="col-md-4 col-sm-6 col-12 mb-3">
+                    <div class="recruiter-card text-center">
+                        <i class="fas fa-shield-alt"></i>
+                        <h5>Indian Armed Forces</h5>
+                    </div>
+                </div>
+            </div>
+            <!-- Global -->
+            <span class="badge badge-subsection bg-success text-white"><i class="fas fa-globe"></i> Global</span>
+            <div class="row">
+                <div class="col-md-4 col-sm-6 col-12 mb-3">
+                    <div class="recruiter-card text-center">
+                        <i class="fas fa-hospital-alt"></i>
+                        <h5>NHS (UK)</h5>
+                    </div>
+                </div>
+                <div class="col-md-4 col-sm-6 col-12 mb-3">
+                    <div class="recruiter-card text-center">
+                        <i class="fas fa-hospital-alt"></i>
+                        <h5>Mayo Clinic (USA)</h5>
+                    </div>
+                </div>
+                <div class="col-md-4 col-sm-6 col-12 mb-3">
+                    <div class="recruiter-card text-center">
+                        <i class="fas fa-hospital-alt"></i>
+                        <h5>Cleveland Clinic (USA)</h5>
+                    </div>
+                </div>
+                <div class="col-md-4 col-sm-6 col-12 mb-3">
+                    <div class="recruiter-card text-center">
+                        <i class="fas fa-hospital-alt"></i>
+                        <h5>Mount Sinai (USA)</h5>
+                    </div>
+                </div>
+                <div class="col-md-4 col-sm-6 col-12 mb-3">
+                    <div class="recruiter-card text-center">
+                        <i class="fas fa-hospital-alt"></i>
+                        <h5>Johns Hopkins Hospital (USA)</h5>
+                    </div>
+                </div>
+                <div class="col-md-4 col-sm-6 col-12 mb-3">
+                    <div class="recruiter-card text-center">
+                        <i class="fas fa-globe"></i>
+                        <h5>WHO</h5>
+                    </div>
+                </div>
+                <div class="col-md-4 col-sm-6 col-12 mb-3">
+                    <div class="recruiter-card text-center">
+                        <i class="fas fa-globe"></i>
+                        <h5>UNICEF</h5>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 
-    <!-- Bootstrap 4 JS and dependencies -->
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+        <!-- 12. Salary Insights -->
+        <div class="section-title-box">
+  <div class="section-title-content">
+    <i class="fas fa-wallet"></i>
+    <h2>Salary Insights (India & Abroad)</h2>
+  </div>
+  <p class="section-title-details">Explore the earning potential for various experience levels, both domestically and internationally. Figures are approximate annual salaries.</p>
+</div>
+
+<div class="salary-insights-container">
+  <div class="salary-card fresher-card">
+    <div class="salary-icon">
+      <i class="fas fa-rupee-sign"></i>
+    </div>
+    <div class="salary-content">
+      <h3>Freshers (India)</h3>
+      <div class="salary-amount">
+        <span class="amount-value">₹3L – ₹6L</span>
+        <span class="amount-unit">per annum</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="salary-card midlevel-card">
+    <div class="salary-icon">
+      <i class="fas fa-rupee-sign"></i>
+    </div>
+    <div class="salary-content">
+      <h3>Mid-Level (India)</h3>
+      <div class="salary-amount">
+        <span class="amount-value">₹7L – ₹12L</span>
+        <span class="amount-unit">per annum</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="salary-card abroad-card">
+    <div class="salary-icon">
+      <i class="fas fa-dollar-sign"></i>
+    </div>
+    <div class="salary-content">
+      <h3>Abroad Salary</h3>
+      <div class="salary-amount">
+        <span class="amount-value">₹60L – ₹120L</span>
+        <span class="amount-unit">per annum</span>
+      </div>
+      <div class="salary-note">
+        (USD 80K – 160K approx.)
+      </div>
+    </div>
+  </div>
+</div>
+
+<style>
+  /* Styling for the new title box */
+  .section-title-box {
+    background: linear-gradient(135deg, #1e3c72, #2a5298); /* Darker blue gradient */
+    color: #ffffff;
+    padding: 25px 30px;
+    border-radius: 15px;
+    margin-bottom: 30px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    margin-top: 30px; /* Added margin to separate from content above if any */
+  }
+
+  .section-title-box::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('data:image/svg+xml;utf8,<svg width="60" height="60" viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg"><g fill="none" fill-rule="evenodd"><g fill="%23ffffff" fill-opacity=".07"><path d="M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zm0-30V0H4v4H0v2h4v4h2V6h4V4H6z" fill="%23fff" fill-opacity=".1"/></g></g></svg>') repeat;
+    opacity: 0.1;
+    pointer-events: none;
+  }
+
+  .section-title-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    margin-bottom: 10px;
+  }
+
+  .section-title-box i {
+    font-size: 2.5rem;
+    color: #ffffff;
+  }
+
+  .section-title-box h2 {
+    margin: 0;
+    font-size: 2rem;
+    font-weight: 700;
+    color: #ffffff;
+  }
+
+  .section-title-details {
+    font-size: 1rem;
+    color: rgba(255, 255, 255, 0.9);
+    line-height: 1.5;
+    max-width: 700px;
+    margin: 0 auto;
+  }
+
+  /* Existing styles for salary cards */
+  .salary-insights-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 25px;
+  }
+
+  .salary-card {
+    background: #ffffff;
+    border-radius: 18px;
+    padding: 25px;
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.07);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .salary-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 6px;
+    border-top-left-radius: 18px;
+    border-top-right-radius: 18px;
+  }
+
+  .fresher-card::before {
+    background: linear-gradient(to right, #4CAF50, #8BC34A);
+  }
+
+  .midlevel-card::before {
+    background: linear-gradient(to right, #FFC107, #FFEB3B);
+  }
+
+  .abroad-card::before {
+    background: linear-gradient(to right, #2196F3, #03A9F4);
+  }
+
+  .salary-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 18px 38px rgba(0, 0, 0, 0.1);
+  }
+
+  .salary-icon {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+    font-size: 2rem;
+    color: #ffffff;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  }
+
+  .fresher-card .salary-icon {
+    background: linear-gradient(135deg, #4CAF50, #8BC34A);
+  }
+
+  .midlevel-card .salary-icon {
+    background: linear-gradient(135deg, #FFC107, #FFEB3B);
+  }
+
+  .abroad-card .salary-icon {
+    background: linear-gradient(135deg, #2196F3, #03A9F4);
+  }
+
+  .salary-content h3 {
+    margin: 0 0 12px 0;
+    color: #333333;
+    font-size: 1.4rem;
+    font-weight: 600;
+  }
+
+  .salary-amount {
+    display: flex;
+    align-items: baseline;
+    justify-content: center;
+    margin-bottom: 8px;
+  }
+
+  .amount-value {
+    font-size: 2.2rem;
+    font-weight: 700;
+    line-height: 1;
+    margin-right: 5px;
+    background: linear-gradient(135deg, #333, #555);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  .fresher-card .amount-value {
+    background: linear-gradient(135deg, #4CAF50, #8BC34A);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  .midlevel-card .amount-value {
+    background: linear-gradient(135deg, #FFC107, #FFEB3B);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  .abroad-card .amount-value {
+    background: linear-gradient(135deg, #2196F3, #03A9F4);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  .amount-unit {
+    font-size: 1rem;
+    font-weight: 500;
+    color: #666666;
+  }
+
+  .salary-note {
+    color: #777777;
+    font-size: 0.9rem;
+    margin-top: 5px;
+  }
+
+  /* Responsive Adjustments */
+  @media (max-width: 768px) {
+    .section-title-box {
+      padding: 20px 25px;
+      margin-bottom: 20px;
+    }
+
+    .section-title-box i {
+      font-size: 2rem;
+    }
+
+    .section-title-box h2 {
+      font-size: 1.6rem;
+    }
+
+    .section-title-details {
+      font-size: 0.9rem;
+    }
+
+    .salary-insights-container {
+      grid-template-columns: 1fr;
+      gap: 20px;
+    }
+
+    .salary-card {
+      padding: 20px;
+    }
+
+    .salary-icon {
+      width: 60px;
+      height: 60px;
+      font-size: 1.8rem;
+      margin-bottom: 15px;
+    }
+
+    .salary-content h3 {
+      font-size: 1.2rem;
+      margin-bottom: 10px;
+    }
+
+    .amount-value {
+      font-size: 1.8rem;
+    }
+
+    .amount-unit {
+      font-size: 0.9rem;
+    }
+
+    .salary-note {
+      font-size: 0.8rem;
+    }
+  }
+</style>
+
+        <!-- 13. Top Colleges – India -->
+
+        <section class="container my-5">
+            <h2 class="mb-4 text-primary">Top Colleges – India</h2>
+            <div class="row row-cols-1 row-cols-sm-2 row-cols-md-4 g-4">
+
+                <!-- Card 1 -->
+                <div class="col mt-4">
+                    <div class="card h-100 p-3 shadow-sm rounded-4">
+                        <div class="d-flex justify-content-between align-items-center">
+                            <span class="badge bg-success text-white">Public</span>
+                            <i class="fas fa-arrow-up-right-from-square text-muted"></i>
+                        </div>
+                        <div class="text-center my-3">
+                            <i class="fas fa-university fa-2x text-primary"></i>
+                        </div>
+                        <h5 class="text-center">AIIMS Delhi</h5>
+                        <div class="d-flex justify-content-between mt-3">
+                            <div><small class="text-muted">Admission via</small><br><strong>NEET</strong></div>
+                            <div><small class="text-muted">Tentative Date</small><br><strong>June 2025</strong></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="col mt-4">
+                    <div class="card h-100 p-3 shadow-sm rounded-4">
+                        <div class="d-flex justify-content-between align-items-center">
+                            <span class="badge bg-success text-white">Public</span>
+                            <i class="fas fa-arrow-up-right-from-square text-muted"></i>
+                        </div>
+                        <div class="text-center my-3">
+                            <i class="fas fa-university fa-2x text-primary"></i>
+                        </div>
+                        <h5 class="text-center">AFMC Pune</h5>
+                        <div class="d-flex justify-content-between mt-3">
+                            <div><small class="text-muted">Admission via</small><br><strong>NEET</strong></div>
+                            <div><small class="text-muted">Tentative Date</small><br><strong>June 2025</strong></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="col mt-4">
+                    <div class="card h-100 p-3 shadow-sm rounded-4">
+                        <div class="d-flex justify-content-between align-items-center">
+                            <span class="badge bg-success text-white">Public</span>
+                            <i class="fas fa-arrow-up-right-from-square text-muted"></i>
+                        </div>
+                        <div class="text-center my-3">
+                            <i class="fas fa-university fa-2x text-primary"></i>
+                        </div>
+                        <h5 class="text-center">Maulana Azad Medical College, Delhi</h5>
+                        <div class="d-flex justify-content-between mt-3">
+                            <div><small class="text-muted">Admission via</small><br><strong>NEET</strong></div>
+                            <div><small class="text-muted">Tentative Date</small><br><strong>June 2025</strong></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 4 -->
+                <div class="col mt-4">
+                    <div class="card h-100 p-3 shadow-sm rounded-4">
+                        <div class="d-flex justify-content-between align-items-center">
+                            <span class="badge bg-primary">Private</span>
+                            <i class="fas fa-arrow-up-right-from-square text-muted"></i>
+                        </div>
+                        <div class="text-center my-3">
+                            <i class="fas fa-university fa-2x text-primary"></i>
+                        </div>
+                        <h5 class="text-center">Kasturba Medical College, Manipal</h5>
+                        <div class="d-flex justify-content-between mt-3">
+                            <div><small class="text-muted">Admission via</small><br><strong>NEET</strong></div>
+                            <div><small class="text-muted">Tentative Date</small><br><strong>May 2025</strong></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 5 -->
+                <div class="col mt-4">
+                    <div class="card h-100 p-3 shadow-sm rounded-4">
+                        <div class="d-flex justify-content-between align-items-center">
+                            <span class="badge bg-primary">Private</span>
+                            <i class="fas fa-arrow-up-right-from-square text-muted"></i>
+                        </div>
+                        <div class="text-center my-3">
+                            <i class="fas fa-university fa-2x text-primary"></i>
+                        </div>
+                        <h5 class="text-center">St. John’s Medical College, Bangalore</h5>
+                        <div class="d-flex justify-content-between mt-3">
+                            <div><small class="text-muted">Admission via</small><br><strong>NEET</strong></div>
+                            <div><small class="text-muted">Tentative Date</small><br><strong>May 2025</strong></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 6 -->
+                <div class="col mt-4">
+                    <div class="card h-100 p-3 shadow-sm rounded-4">
+                        <div class="d-flex justify-content-between align-items-center">
+                            <span class="badge bg-success text-white">Public</span>
+                            <i class="fas fa-arrow-up-right-from-square text-muted"></i>
+                        </div>
+                        <div class="text-center my-3">
+                            <i class="fas fa-university fa-2x text-primary"></i>
+                        </div>
+                        <h5 class="text-center">King George's Medical University, Lucknow</h5>
+                        <div class="d-flex justify-content-between mt-3">
+                            <div><small class="text-muted">Admission via</small><br><strong>NEET</strong></div>
+                            <div><small class="text-muted">Tentative Date</small><br><strong>June 2025</strong></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 7 -->
+                <div class="col mt-4">
+                    <div class="card h-100 p-3 shadow-sm rounded-4">
+                        <div class="d-flex justify-content-between align-items-center">
+                            <span class="badge bg-success text-white">Public</span>
+                            <i class="fas fa-arrow-up-right-from-square text-muted"></i>
+                        </div>
+                        <div class="text-center my-3">
+                            <i class="fas fa-university fa-2x text-primary"></i>
+                        </div>
+                        <h5 class="text-center">Grant Medical College, Mumbai</h5>
+                        <div class="d-flex justify-content-between mt-3">
+                            <div><small class="text-muted">Admission via</small><br><strong>NEET</strong></div>
+                            <div><small class="text-muted">Tentative Date</small><br><strong>June 2025</strong></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 8 -->
+                <div class="col mt-4">
+                    <div class="card h-100 p-3 shadow-sm rounded-4">
+                        <div class="d-flex justify-content-between align-items-center">
+                            <span class="badge bg-success text-white">Public</span>
+                            <i class="fas fa-arrow-up-right-from-square text-muted"></i>
+                        </div>
+                        <div class="text-center my-3">
+                            <i class="fas fa-university fa-2x text-primary"></i>
+                        </div>
+                        <h5 class="text-center">Seth GS Medical College, Mumbai</h5>
+                        <div class="d-flex justify-content-between mt-3">
+                            <div><small class="text-muted">Admission via</small><br><strong>NEET</strong></div>
+                            <div><small class="text-muted">Tentative Date</small><br><strong>June 2025</strong></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 9 -->
+                <div class="col mt-4">
+                    <div class="card h-100 p-3 shadow-sm rounded-4">
+                        <div class="d-flex justify-content-between align-items-center">
+                            <span class="badge bg-success text-white">Public</span>
+                            <i class="fas fa-arrow-up-right-from-square text-muted"></i>
+                        </div>
+                        <div class="text-center my-3">
+                            <i class="fas fa-university fa-2x text-primary"></i>
+                        </div>
+                        <h5 class="text-center">Institute of Medical Sciences, BHU Varanasi</h5>
+                        <div class="d-flex justify-content-between mt-3">
+                            <div><small class="text-muted">Admission via</small><br><strong>NEET</strong></div>
+                            <div><small class="text-muted">Tentative Date</small><br><strong>June 2025</strong></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 10 -->
+                <div class="col mt-4">
+                    <div class="card h-100 p-3 shadow-sm rounded-4">
+                        <div class="d-flex justify-content-between align-items-center">
+                            <span class="badge bg-success text-white">Public</span>
+                            <i class="fas fa-arrow-up-right-from-square text-muted"></i>
+                        </div>
+                        <div class="text-center my-3">
+                            <i class="fas fa-university fa-2x text-primary"></i>
+                        </div>
+                        <h5 class="text-center">Vardhman Mahavir Medical College, Delhi</h5>
+                        <div class="d-flex justify-content-between mt-3">
+                            <div><small class="text-muted">Admission via</small><br><strong>NEET</strong></div>
+                            <div><small class="text-muted">Tentative Date</small><br><strong>June 2025</strong></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 11 -->
+                <div class="col mt-4">
+                    <div class="card h-100 p-3 shadow-sm rounded-4">
+                        <div class="d-flex justify-content-between align-items-center">
+                            <span class="badge bg-success text-white">Public</span>
+                            <i class="fas fa-arrow-up-right-from-square text-muted"></i>
+                        </div>
+                        <div class="text-center my-3">
+                            <i class="fas fa-university fa-2x text-primary"></i>
+                        </div>
+                        <h5 class="text-center">Osmania Medical College, Hyderabad</h5>
+                        <div class="d-flex justify-content-between mt-3">
+                            <div><small class="text-muted">Admission via</small><br><strong>NEET</strong></div>
+                            <div><small class="text-muted">Tentative Date</small><br><strong>June 2025</strong></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 12 -->
+                <div class="col mt-4">
+                    <div class="card h-100 p-3 shadow-sm rounded-4">
+                        <div class="d-flex justify-content-between align-items-center">
+                            <span class="badge bg-success text-white">Public</span>
+                            <i class="fas fa-arrow-up-right-from-square text-muted"></i>
+                        </div>
+                        <div class="text-center my-3">
+                            <i class="fas fa-university fa-2x text-primary"></i>
+                        </div>
+                        <h5 class="text-center">Bangalore Medical College and Research Institute</h5>
+                        <div class="d-flex justify-content-between mt-3">
+                            <div><small class="text-muted">Admission via</small><br><strong>NEET</strong></div>
+                            <div><small class="text-muted">Tentative Date</small><br><strong>June 2025</strong></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 13 -->
+                <div class="col mt-4">
+                    <div class="card h-100 p-3 shadow-sm rounded-4">
+                        <div class="d-flex justify-content-between align-items-center">
+                            <span class="badge bg-success text-white">Public</span>
+                            <i class="fas fa-arrow-up-right-from-square text-muted"></i>
+                        </div>
+                        <div class="text-center my-3">
+                            <i class="fas fa-university fa-2x text-primary"></i>
+                        </div>
+                        <h5 class="text-center">Lady Hardinge Medical College, Delhi</h5>
+                        <div class="d-flex justify-content-between mt-3">
+                            <div><small class="text-muted">Admission via</small><br><strong>NEET</strong></div>
+                            <div><small class="text-muted">Tentative Date</small><br><strong>June 2025</strong></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 14 -->
+                <div class="col mt-4">
+                    <div class="card h-100 p-3 shadow-sm rounded-4">
+                        <div class="d-flex justify-content-between align-items-center">
+                            <span class="badge bg-success text-white">Public</span>
+                            <i class="fas fa-arrow-up-right-from-square text-muted"></i>
+                        </div>
+                        <div class="text-center my-3">
+                            <i class="fas fa-university fa-2x text-primary"></i>
+                        </div>
+                        <h5 class="text-center">JIPMER Puducherry</h5>
+                        <div class="d-flex justify-content-between mt-3">
+                            <div><small class="text-muted">Admission via</small><br><strong>NEET</strong></div>
+                            <div><small class="text-muted">Tentative Date</small><br><strong>June 2025</strong></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 15 -->
+                <div class="col mt-4">
+                    <div class="card h-100 p-3 shadow-sm rounded-4">
+                        <div class="d-flex justify-content-between align-items-center">
+                            <span class="badge bg-success text-white">Public</span>
+                            <i class="fas fa-arrow-up-right-from-square text-muted"></i>
+                        </div>
+                        <div class="text-center my-3">
+                            <i class="fas fa-university fa-2x text-primary"></i>
+                        </div>
+                        <h5 class="text-center">BJ Medical College, Ahmedabad</h5>
+                        <div class="d-flex justify-content-between mt-3">
+                            <div><small class="text-muted">Admission via</small><br><strong>NEET</strong></div>
+                            <div><small class="text-muted">Tentative Date</small><br><strong>June 2025</strong></div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+
+
+
+        <!-- 14. Top Colleges – World -->
+       
+        <section class="container my-5">
+            <h2 class="mb-4 text-primary">Top Colleges – World</h2>
+            <div class="row row-cols-1 row-cols-sm-2 row-cols-md-4 g-4">
+
+                <!-- Card 1 -->
+                <div class="col mt-4">
+                    <div class="card h-100 p-3 shadow-sm rounded-4">
+                        <div class="d-flex justify-content-between align-items-center">
+                            <span class="badge bg-info text-white">Global</span>
+                            <i class="fas fa-arrow-up-right-from-square text-muted"></i>
+                        </div>
+                        <div class="text-center my-3">
+                            <i class="fas fa-university fa-2x text-primary"></i>
+                        </div>
+                        <h5 class="text-center">Harvard University, USA</h5>
+                    </div>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="col mt-4">
+                    <div class="card h-100 p-3 shadow-sm rounded-4">
+                        <div class="d-flex justify-content-between align-items-center">
+                            <span class="badge bg-info text-white">Global</span>
+                            <i class="fas fa-arrow-up-right-from-square text-muted"></i>
+                        </div>
+                        <div class="text-center my-3">
+                            <i class="fas fa-university fa-2x text-primary"></i>
+                        </div>
+                        <h5 class="text-center">University of Oxford, UK</h5>
+                    </div>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="col mt-4">
+                    <div class="card h-100 p-3 shadow-sm rounded-4">
+                        <div class="d-flex justify-content-between align-items-center">
+                            <span class="badge bg-info text-white">Global</span>
+                            <i class="fas fa-arrow-up-right-from-square text-muted"></i>
+                        </div>
+                        <div class="text-center my-3">
+                            <i class="fas fa-university fa-2x text-primary"></i>
+                        </div>
+                        <h5 class="text-center">University of Cambridge, UK</h5>
+                    </div>
+                </div>
+
+                <!-- Card 4 -->
+                <div class="col mt-4">
+                    <div class="card h-100 p-3 shadow-sm rounded-4">
+                        <div class="d-flex justify-content-between align-items-center">
+                            <span class="badge bg-info text-white">Global</span>
+                            <i class="fas fa-arrow-up-right-from-square text-muted"></i>
+                        </div>
+                        <div class="text-center my-3">
+                            <i class="fas fa-university fa-2x text-primary"></i>
+                        </div>
+                        <h5 class="text-center">Stanford University, USA</h5>
+                    </div>
+                </div>
+
+                <!-- Card 5 -->
+                <div class="col mt-4">
+                    <div class="card h-100 p-3 shadow-sm rounded-4">
+                        <div class="d-flex justify-content-between align-items-center">
+                            <span class="badge bg-info text-white">Global</span>
+                            <i class="fas fa-arrow-up-right-from-square text-muted"></i>
+                        </div>
+                        <div class="text-center my-3">
+                            <i class="fas fa-university fa-2x text-primary"></i>
+                        </div>
+                        <h5 class="text-center">Johns Hopkins University, USA</h5>
+                    </div>
+                </div>
+
+                <!-- Card 6 -->
+                <div class="col mt-4">
+                    <div class="card h-100 p-3 shadow-sm rounded-4">
+                        <div class="d-flex justify-content-between align-items-center">
+                            <span class="badge bg-info text-white">Global</span>
+                            <i class="fas fa-arrow-up-right-from-square text-muted"></i>
+                        </div>
+                        <div class="text-center my-3">
+                            <i class="fas fa-university fa-2x text-primary"></i>
+                        </div>
+                        <h5 class="text-center">University of California, San Francisco, USA</h5>
+                    </div>
+                </div>
+
+                <!-- Card 7 -->
+                <div class="col mt-4">
+                    <div class="card h-100 p-3 shadow-sm rounded-4">
+                        <div class="d-flex justify-content-between align-items-center">
+                            <span class="badge bg-info text-white">Global</span>
+                            <i class="fas fa-arrow-up-right-from-square text-muted"></i>
+                        </div>
+                        <div class="text-center my-3">
+                            <i class="fas fa-university fa-2x text-primary"></i>
+                        </div>
+                        <h5 class="text-center">Karolinska Institute, Sweden</h5>
+                    </div>
+                </div>
+
+                <!-- Card 8 -->
+                <div class="col mt-4">
+                    <div class="card h-100 p-3 shadow-sm rounded-4">
+                        <div class="d-flex justify-content-between align-items-center">
+                            <span class="badge bg-info text-white">Global</span>
+                            <i class="fas fa-arrow-up-right-from-square text-muted"></i>
+                        </div>
+                        <div class="text-center my-3">
+                            <i class="fas fa-university fa-2x text-primary"></i>
+                        </div>
+                        <h5 class="text-center">University of Melbourne, Australia</h5>
+                    </div>
+                </div>
+
+                <!-- Card 9 -->
+                <div class="col mt-4">
+                    <div class="card h-100 p-3 shadow-sm rounded-4">
+                        <div class="d-flex justify-content-between align-items-center">
+                            <span class="badge bg-info text-white">Global</span>
+                            <i class="fas fa-arrow-up-right-from-square text-muted"></i>
+                        </div>
+                        <div class="text-center my-3">
+                            <i class="fas fa-university fa-2x text-primary"></i>
+                        </div>
+                        <h5 class="text-center">Imperial College London, UK</h5>
+                    </div>
+                </div>
+
+                <!-- Card 10 -->
+                <div class="col mt-4">
+                    <div class="card h-100 p-3 shadow-sm rounded-4">
+                        <div class="d-flex justify-content-between align-items-center">
+                            <span class="badge bg-info text-white">Global</span>
+                            <i class="fas fa-arrow-up-right-from-square text-muted"></i>
+                        </div>
+                        <div class="text-center my-3">
+                            <i class="fas fa-university fa-2x text-primary"></i>
+                        </div>
+                        <h5 class="text-center">University of Toronto, Canada</h5>
+                    </div>
+                </div>
+
+                <!-- Card 11 -->
+                <div class="col mt-4">
+                    <div class="card h-100 p-3 shadow-sm rounded-4">
+                        <div class="d-flex justify-content-between align-items-center">
+                            <span class="badge bg-info text-white">Global</span>
+                            <i class="fas fa-arrow-up-right-from-square text-muted"></i>
+                        </div>
+                        <div class="text-center my-3">
+                            <i class="fas fa-university fa-2x text-primary"></i>
+                        </div>
+                        <h5 class="text-center">University of Tokyo, Japan</h5>
+                    </div>
+                </div>
+
+                <!-- Card 12 -->
+                <div class="col mt-4">
+                    <div class="card h-100 p-3 shadow-sm rounded-4">
+                        <div class="d-flex justify-content-between align-items-center">
+                            <span class="badge bg-info text-white">Global</span>
+                            <i class="fas fa-arrow-up-right-from-square text-muted"></i>
+                        </div>
+                        <div class="text-center my-3">
+                            <i class="fas fa-university fa-2x text-primary"></i>
+                        </div>
+                        <h5 class="text-center">National University of Singapore</h5>
+                    </div>
+                </div>
+
+                <!-- Card 13 -->
+                <div class="col mt-4">
+                    <div class="card h-100 p-3 shadow-sm rounded-4">
+                        <div class="d-flex justify-content-between align-items-center">
+                            <span class="badge bg-info text-white">Global</span>
+                            <i class="fas fa-arrow-up-right-from-square text-muted"></i>
+                        </div>
+                        <div class="text-center my-3">
+                            <i class="fas fa-university fa-2x text-primary"></i>
+                        </div>
+                        <h5 class="text-center">University of Sydney, Australia</h5>
+                    </div>
+                </div>
+
+                <!-- Card 14 -->
+                <div class="col mt-4">
+                    <div class="card h-100 p-3 shadow-sm rounded-4">
+                        <div class="d-flex justify-content-between align-items-center">
+                            <span class="badge bg-info text-white">Global</span>
+                            <i class="fas fa-arrow-up-right-from-square text-muted"></i>
+                        </div>
+                        <div class="text-center my-3">
+                            <i class="fas fa-university fa-2x text-primary"></i>
+                        </div>
+                        <h5 class="text-center">University of Edinburgh, UK</h5>
+                    </div>
+                </div>
+
+                <!-- Card 15 -->
+                <div class="col mt-4">
+                    <div class="card h-100 p-3 shadow-sm rounded-4">
+                        <div class="d-flex justify-content-between align-items-center">
+                            <span class="badge bg-info text-white">Global</span>
+                            <i class="fas fa-arrow-up-right-from-square text-muted"></i>
+                        </div>
+                        <div class="text-center my-3">
+                            <i class="fas fa-university fa-2x text-primary"></i>
+                        </div>
+                        <h5 class="text-center">Yale University, USA</h5>
+                    </div>
+                </div>
+
+            </div>
+        
+
+
+
+
+        <!-- 15. Top Colleges – Tamil Nadu -->
+
+        <section class="container my-5">
+            <h2 class="mb-4 text-primary">Top Colleges – Tamil Nadu</h2>
+            <div class="row row-cols-1 row-cols-sm-2 row-cols-md-4 g-4">
+
+                <!-- Tamil Nadu Card 1 -->
+                <div class="col mt-4">
+                    <div class="card h-100 p-3 shadow-sm rounded-4">
+                        <div class="d-flex justify-content-between align-items-center">
+                            <span class="badge bg-success text-white">Tamil Nadu</span>
+                            <i class="fas fa-arrow-up-right-from-square text-muted"></i>
+                        </div>
+                        <div class="text-center my-3">
+                            <i class="fas fa-building fa-2x text-primary"></i>
+                        </div>
+                        <h5 class="text-center">Madras Medical College, Chennai</h5>
+                    </div>
+                </div>
+
+                <!-- Tamil Nadu Card 2 -->
+                <div class="col mt-4">
+                    <div class="card h-100 p-3 shadow-sm rounded-4">
+                        <div class="d-flex justify-content-between align-items-center">
+                            <span class="badge bg-success text-white">Tamil Nadu</span>
+                            <i class="fas fa-arrow-up-right-from-square text-muted"></i>
+                        </div>
+                        <div class="text-center my-3">
+                            <i class="fas fa-building fa-2x text-primary"></i>
+                        </div>
+                        <h5 class="text-center">Stanley Medical College, Chennai</h5>
+                    </div>
+                </div>
+
+                <!-- Tamil Nadu Card 3 -->
+                <div class="col mt-4">
+                    <div class="card h-100 p-3 shadow-sm rounded-4">
+                        <div class="d-flex justify-content-between align-items-center">
+                            <span class="badge bg-success text-white">Tamil Nadu</span>
+                            <i class="fas fa-arrow-up-right-from-square text-muted"></i>
+                        </div>
+                        <div class="text-center my-3">
+                            <i class="fas fa-building fa-2x text-primary"></i>
+                        </div>
+                        <h5 class="text-center">Kilpauk Medical College, Chennai</h5>
+                    </div>
+                </div>
+
+                <!-- Tamil Nadu Card 4 -->
+                <div class="col mt-4">
+                    <div class="card h-100 p-3 shadow-sm rounded-4">
+                        <div class="d-flex justify-content-between align-items-center">
+                            <span class="badge bg-success text-white">Tamil Nadu</span>
+                            <i class="fas fa-arrow-up-right-from-square text-muted"></i>
+                        </div>
+                        <div class="text-center my-3">
+                            <i class="fas fa-building fa-2x text-primary"></i>
+                        </div>
+                        <h5 class="text-center">PSG Institute of Medical Sciences, Coimbatore</h5>
+                    </div>
+                </div>
+
+                <!-- Tamil Nadu Card 5 -->
+                <div class="col mt-4">
+                    <div class="card h-100 p-3 shadow-sm rounded-4">
+                        <div class="d-flex justify-content-between align-items-center">
+                            <span class="badge bg-success text-white">Tamil Nadu</span>
+                            <i class="fas fa-arrow-up-right-from-square text-muted"></i>
+                        </div>
+                        <div class="text-center my-3">
+                            <i class="fas fa-building fa-2x text-primary"></i>
+                        </div>
+                        <h5 class="text-center">Coimbatore Medical College</h5>
+                    </div>
+                </div>
+
+                <!-- Tamil Nadu Card 6 -->
+                <div class="col mt-4">
+                    <div class="card h-100 p-3 shadow-sm rounded-4">
+                        <div class="d-flex justify-content-between align-items-center">
+                            <span class="badge bg-success text-white">Tamil Nadu</span>
+                            <i class="fas fa-arrow-up-right-from-square text-muted"></i>
+                        </div>
+                        <div class="text-center my-3">
+                            <i class="fas fa-building fa-2x text-primary"></i>
+                        </div>
+                        <h5 class="text-center">Government Rajaji Medical College, Madurai</h5>
+                    </div>
+                </div>
+
+                <!-- Tamil Nadu Card 7 -->
+                <div class="col mt-4">
+                    <div class="card h-100 p-3 shadow-sm rounded-4">
+                        <div class="d-flex justify-content-between align-items-center">
+                            <span class="badge bg-success text-white">Tamil Nadu</span>
+                            <i class="fas fa-arrow-up-right-from-square text-muted"></i>
+                        </div>
+                        <div class="text-center my-3">
+                            <i class="fas fa-building fa-2x text-primary"></i>
+                        </div>
+                        <h5 class="text-center">Government Medical College, Trichy</h5>
+                    </div>
+                </div>
+
+                <!-- Tamil Nadu Card 8 -->
+                <div class="col mt-4">
+                    <div class="card h-100 p-3 shadow-sm rounded-4">
+                        <div class="d-flex justify-content-between align-items-center">
+                            <span class="badge bg-success text-white">Tamil Nadu</span>
+                            <i class="fas fa-arrow-up-right-from-square text-muted"></i>
+                        </div>
+                        <div class="text-center my-3">
+                            <i class="fas fa-building fa-2x text-primary"></i>
+                        </div>
+                        <h5 class="text-center">Government Medical College, Thanjavur</h5>
+                    </div>
+                </div>
+
+                <!-- Tamil Nadu Card 9 -->
+                <div class="col mt-4">
+                    <div class="card h-100 p-3 shadow-sm rounded-4">
+                        <div class="d-flex justify-content-between align-items-center">
+                            <span class="badge bg-success text-white">Tamil Nadu</span>
+                            <i class="fas fa-arrow-up-right-from-square text-muted"></i>
+                        </div>
+                        <div class="text-center my-3">
+                            <i class="fas fa-building fa-2x text-primary"></i>
+                        </div>
+                        <h5 class="text-center">Government Medical College, Tirunelveli</h5>
+                    </div>
+                </div>
+
+                <!-- Tamil Nadu Card 10 -->
+                <div class="col mt-4">
+                    <div class="card h-100 p-3 shadow-sm rounded-4">
+                        <div class="d-flex justify-content-between align-items-center">
+                            <span class="badge bg-success text-white">Tamil Nadu</span>
+                            <i class="fas fa-arrow-up-right-from-square text-muted"></i>
+                        </div>
+                        <div class="text-center my-3">
+                            <i class="fas fa-building fa-2x text-primary"></i>
+                        </div>
+                        <h5 class="text-center">Government Medical College, Erode</h5>
+                    </div>
+                </div>
+
+                <!-- Tamil Nadu Card 11 -->
+                <div class="col mt-4">
+                    <div class="card h-100 p-3 shadow-sm rounded-4">
+                        <div class="d-flex justify-content-between align-items-center">
+                            <span class="badge bg-success text-white">Tamil Nadu</span>
+                            <i class="fas fa-arrow-up-right-from-square text-muted"></i>
+                        </div>
+                        <div class="text-center my-3">
+                            <i class="fas fa-building fa-2x text-primary"></i>
+                        </div>
+                        <h5 class="text-center">Government Medical College, Theni</h5>
+                    </div>
+                </div>
+
+                <!-- Tamil Nadu Card 12 -->
+                <div class="col mt-4">
+                    <div class="card h-100 p-3 shadow-sm rounded-4">
+                        <div class="d-flex justify-content-between align-items-center">
+                            <span class="badge bg-success text-white">Tamil Nadu</span>
+                            <i class="fas fa-arrow-up-right-from-square text-muted"></i>
+                        </div>
+                        <div class="text-center my-3">
+                            <i class="fas fa-building fa-2x text-primary"></i>
+                        </div>
+                        <h5 class="text-center">Government Medical College, Omandurar (Chennai)</h5>
+                    </div>
+                </div>
+
+                <!-- Tamil Nadu Card 13 -->
+                <div class="col mt-4">
+                    <div class="card h-100 p-3 shadow-sm rounded-4">
+                        <div class="d-flex justify-content-between align-items-center">
+                            <span class="badge bg-success text-white">Tamil Nadu</span>
+                            <i class="fas fa-arrow-up-right-from-square text-muted"></i>
+                        </div>
+                        <div class="text-center my-3">
+                            <i class="fas fa-building fa-2x text-primary"></i>
+                        </div>
+                        <h5 class="text-center">SRM Medical College Hospital & Research Centre, Kanchipuram</h5>
+                    </div>
+                </div>
+
+                <!-- Tamil Nadu Card 14 -->
+                <div class="col mt-4">
+                    <div class="card h-100 p-3 shadow-sm rounded-4">
+                        <div class="d-flex justify-content-between align-items-center">
+                            <span class="badge bg-success text-white">Tamil Nadu</span>
+                            <i class="fas fa-arrow-up-right-from-square text-muted"></i>
+                        </div>
+                        <div class="text-center my-3">
+                            <i class="fas fa-building fa-2x text-primary"></i>
+                        </div>
+                        <h5 class="text-center">Government Mohan Kumaramangalam Medical College, Salem</h5>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+
+        <!-- 16. Benefits of Choosing This Course -->
+
+        <div class="med-card">
+    <div class="med-card-header">
+        <div class="med-icon-circle">
+            <i class="fas fa-heartbeat"></i>
+        </div>
+        <h3>Benefits of Choosing This Course</h3>
+        <div class="med-wave"></div>
+    </div>
+
+    <ul class="med-card-list">
+        <li class="med-list-item">
+            <div class="item-icon">
+                <i class="fas fa-hands-helping"></i>
+            </div>
+            <span>Opportunity to save lives and contribute to society</span>
+        </li>
+        <li class="med-list-item">
+            <div class="item-icon">
+                <i class="fas fa-briefcase"></i>
+            </div>
+            <span>Strong demand and job security worldwide</span>
+        </li>
+        <li class="med-list-item">
+            <div class="item-icon">
+                <i class="fas fa-briefcase"></i>
+            </div>
+            <span>Diverse career options in clinical practice, research, public health, and education</span>
+        </li>
+        <li class="med-list-item">
+            <div class="item-icon">
+                <i class="fas fa-wallet"></i>
+            </div>
+            <span>High earning potential with global mobility</span>
+        </li>
+        <li class="med-list-item">
+            <div class="item-icon">
+                <i class="fas fa-graduation-cap"></i>
+            </div>
+            <span>Continuous learning and professional growth</span>
+        </li>
+    </ul>
+</div>
+
+<style>
+    .med-card {
+        background: white;
+        border-radius: 12px;
+        overflow: hidden;
+        box-shadow: 0 5px 20px rgba(0, 119, 182, 0.1);
+        width: 100%;
+        max-width: 100%;
+        transition: transform 0.3s ease;
+        margin: 0;
+        box-sizing: border-box;
+    }
+
+    .med-card:hover {
+        transform: translateY(-3px);
+    }
+
+    .med-card-header {
+        background: linear-gradient(135deg, #0077b6 0%, #00b4d8 100%);
+        color: white;
+        padding: 25px 15px 35px;
+        text-align: center;
+        position: relative;
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    .med-icon-circle {
+        width: 60px;
+        height: 60px;
+        background: rgba(255, 255, 255, 0.2);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0 auto 15px;
+        font-size: 1.5rem;
+    }
+
+    .med-card-header h3 {
+        margin: 0;
+        font-weight: 600;
+        padding: 0 10px;
+    }
+
+    .med-wave {
+        position: absolute;
+        bottom: -1px;
+        left: 0;
+        width: 100%;
+        height: 20px;
+        background: url('data:image/svg+xml;utf8,<svg viewBox="0 0 1200 120" xmlns="http://www.w3.org/2000/svg"><path d="M0,0V46.29c47.79,22.2,103.59,32.17,158,28,70.36-5.37,136.33-33.31,206.8-37.5C438.64,32.43,512.34,53.67,583,72.05c69.27,18,138.3,24.88,209.4,13.08,36.15-6,69.85-17.84,104.45-29.34C989.49,25,1113-14.29,1200,52.47V0Z" fill="white" opacity=".25"/></svg>');
+        background-size: cover;
+    }
+
+    .med-card-list {
+        list-style: none;
+        padding: 20px 15px;
+        margin: 0;
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    .med-list-item {
+        display: flex;
+        align-items: center;
+        padding: 15px 10px;
+        border-bottom: 1px solid #f0f8ff;
+        transition: background 0.2s ease;
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    .med-list-item:last-child {
+        border-bottom: none;
+    }
+
+    .med-list-item:hover {
+        background: #f8fdff;
+    }
+
+    .item-icon {
+        width: 40px;
+        height: 40px;
+        background: #e6f4ff;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-right: 15px;
+        color: #0077b6;
+        flex-shrink: 0;
+    }
+
+    /* Responsive adjustments */
+    @media (max-width: 768px) {
+        .med-card-header {
+            padding: 20px 10px 30px;
+        }
+
+        .med-icon-circle {
+            width: 50px;
+            height: 50px;
+            font-size: 1.3rem;
+        }
+
+        .med-card-list {
+            padding: 15px 10px;
+        }
+    }
+
+    @media (max-width: 480px) {
+        .med-list-item {
+            flex-direction: column;
+            text-align: center;
+            padding: 15px 5px;
+        }
+
+        .item-icon {
+            margin-right: 0;
+            margin-bottom: 10px;
+        }
+
+        .med-card-header h3 {
+            font-size: 1.2rem;
+        }
+    }
+</style>
+
+        
+
+        <!-- 17. Advantages and Disadvantages -->
+
+
+        <div class="med-card mt-5">
+    <div class="med-card-header">
+        <div class="med-icon-circle">
+            <i class="fas fa-balance-scale"></i>
+        </div>
+        <h3>Advantages and Disadvantages</h3>
+        <div class="med-wave"></div>
+    </div>
+
+    <div class="med-card-content-columns">
+        <div class="med-card-column">
+            <div class="med-subsection-title">
+                <i class="fas fa-thumbs-up"></i> Advantages
+            </div>
+            <ul class="med-card-list">
+                <li class="med-list-item">
+                    <div class="item-icon">
+                        <i class="fas fa-briefcase"></i>
+                    </div>
+                    <span>Multiple job sectors across healthcare</span>
+                </li>
+                <li class="med-list-item">
+                    <div class="item-icon">
+                        <i class="fas fa-globe"></i>
+                    </div>
+                    <span>Global opportunities through international licensing exams</span>
+                </li>
+                <li class="med-list-item">
+                    <div class="item-icon">
+                        <i class="fas fa-lightbulb"></i>
+                    </div>
+                    <span>High innovation scope in medical research and technology</span>
+                </li>
+                <li class="med-list-item">
+                    <div class="item-icon">
+                        <i class="fas fa-award"></i>
+                    </div>
+                    <span>Societal respect and recognition</span>
+                </li>
+            </ul>
+        </div>
+
+        <div class="med-card-column">
+            <div class="med-subsection-title">
+                <i class="fas fa-thumbs-down"></i> Disadvantages
+            </div>
+            <ul class="med-card-list">
+                <li class="med-list-item">
+                    <div class="item-icon">
+                        <i class="fas fa-trophy"></i>
+                    </div>
+                    <span>Intense competition for MBBS admission and specialization</span>
+                </li>
+                <li class="med-list-item">
+                    <div class="item-icon">
+                        <i class="fas fa-clock"></i>
+                    </div>
+                    <span>Long duration of study and training</span>
+                </li>
+                <li class="med-list-item">
+                    <div class="item-icon">
+                        <i class="fas fa-heartbeat"></i>
+                    </div>
+                    <span>High academic and work-related stress</span>
+                </li>
+                <li class="med-list-item">
+                    <div class="item-icon">
+                        <i class="fas fa-wallet"></i>
+                    </div>
+                    <span>Modest starting salaries in public healthcare settings</span>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<style>
+    .med-card {
+        background: white;
+        border-radius: 12px;
+        overflow: hidden;
+        box-shadow: 0 5px 20px rgba(0, 119, 182, 0.1);
+        width: 100%;
+        max-width: 100%;
+        transition: transform 0.3s ease;
+        margin: 0;
+        box-sizing: border-box;
+    }
+
+    .med-card:hover {
+        transform: translateY(-3px);
+    }
+
+    .med-card-header {
+        background: linear-gradient(135deg, #007bff 0%, #00b4d8 100%);
+        color: white;
+        padding: 25px 15px 35px;
+        text-align: center;
+        position: relative;
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    .med-icon-circle {
+        width: 60px;
+        height: 60px;
+        background: rgba(255, 255, 255, 0.2);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0 auto 15px;
+        font-size: 1.5rem;
+    }
+
+    .med-card-header h3 {
+        margin: 0;
+        font-weight: 600;
+        padding: 0 10px;
+    }
+
+    .med-wave {
+        position: absolute;
+        bottom: -1px;
+        left: 0;
+        width: 100%;
+        height: 20px;
+        background: url('data:image/svg+xml;utf8,<svg viewBox="0 0 1200 120" xmlns="http://www.w3.org/2000/svg"><path d="M0,0V46.29c47.79,22.2,103.59,32.17,158,28,70.36-5.37,136.33-33.31,206.8-37.5C438.64,32.43,512.34,53.67,583,72.05c69.27,18,138.3,24.88,209.4,13.08,36.15-6,69.85-17.84,104.45-29.34C989.49,25,1113-14.29,1200,52.47V0Z" fill="white" opacity=".25"/></svg>');
+        background-size: cover;
+    }
+
+    /* New Flexbox Container for Columns */
+    .med-card-content-columns {
+        display: flex;
+        flex-wrap: wrap; /* Allows columns to wrap on smaller screens */
+        padding: 20px 15px; /* Overall padding for the content area */
+        gap: 20px; /* Space between columns */
+    }
+
+    .med-card-column {
+        flex: 1 1 calc(50% - 10px); /* Default to 50% width minus half of the gap */
+        box-sizing: border-box;
+        min-width: 280px; /* Minimum width before wrapping */
+    }
+
+    /* Style for the 'Advantages' and 'Disadvantages' sub-titles within the card */
+    .med-subsection-title {
+        font-size: 1.3rem;
+        font-weight: 600;
+        color: #007bff; /* Blue theme color */
+        text-align: center;
+        padding: 0px 15px 10px; /* Adjust padding as needed */
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 10px; /* Space between icon and text */
+        margin-top: 0; /* No top margin here as columns handle spacing */
+    }
+
+    .med-card-list {
+        list-style: none;
+        padding: 0; /* No padding here, handled by .med-card-content-columns */
+        margin: 0;
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    .med-list-item {
+        display: flex;
+        align-items: center;
+        padding: 15px 10px;
+        border-bottom: 1px solid #f0f8ff;
+        transition: background 0.2s ease;
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    /* Ensure last item in each list doesn't have a bottom border */
+    .med-card-list .med-list-item:last-child {
+        border-bottom: none;
+    }
+
+    .med-list-item:hover {
+        background: #f8fdff;
+    }
+
+    .item-icon {
+        width: 40px;
+        height: 40px;
+        background: #e6f4ff;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-right: 15px;
+        color: #007bff;
+        flex-shrink: 0;
+    }
+
+    /* Responsive adjustments */
+    @media (max-width: 768px) {
+        .med-card-header {
+            padding: 20px 10px 30px;
+        }
+
+        .med-icon-circle {
+            width: 50px;
+            height: 50px;
+            font-size: 1.3rem;
+        }
+
+        .med-subsection-title {
+            font-size: 1.1rem;
+            padding: 15px 10px 8px;
+        }
+
+        .med-card-content-columns {
+            flex-direction: column; /* Stack columns on smaller screens */
+            padding: 20px 15px; /* Maintain padding */
+            gap: 0; /* Remove gap when stacked */
+        }
+
+        .med-card-column {
+            flex: 1 1 100%; /* Take full width when stacked */
+            min-width: unset;
+        }
+
+        /* Add spacing between stacked columns */
+        .med-card-column:not(:last-child) {
+            margin-bottom: 20px;
+        }
+    }
+
+    @media (max-width: 480px) {
+        .med-list-item {
+            flex-direction: column;
+            text-align: center;
+            padding: 15px 5px;
+        }
+
+        .item-icon {
+            margin-right: 0;
+            margin-bottom: 10px;
+        }
+
+        .med-card-header h3 {
+            font-size: 1.2rem;
+        }
+
+        .med-subsection-title {
+            font-size: 1rem;
+            gap: 5px;
+        }
+    }
+</style>
+
+
+
+
+
+        
+
+        <!-- 18. FAQs & Student Queries -->
+
+
+        <div class="faq-section-container">
+  <div class="faq-section-header">
+    <i class="fas fa-question-circle"></i>
+    <h2>FAQs & Student Queries</h2>
+    
+  </div>
+
+  <div class="accordion-container">
+    <div class="accordion-item">
+      <button class="accordion-header" aria-expanded="false" aria-controls="faq1-panel">
+        <span class="question-icon"><i class="fas fa-question"></i></span>
+        <span class="question-text">How difficult is it to get into MBBS?</span>
+        <span class="toggle-icon"><i class="fas fa-chevron-down"></i></span>
+      </button>
+      <div id="faq1-panel" class="accordion-content" role="region" aria-labelledby="faq1-header">
+        <p><span class="answer-icon"><i class="fas fa-info-circle"></i></span>Admission to MBBS is *highly competitive* in India; cracking NEET-UG with a good score is essential.</p>
+      </div>
+    </div>
+
+    <div class="accordion-item">
+      <button class="accordion-header" aria-expanded="false" aria-controls="faq2-panel">
+        <span class="question-icon"><i class="fas fa-question"></i></span>
+        <span class="question-text">Can I switch to other healthcare careers after MBBS?</span>
+        <span class="toggle-icon"><i class="fas fa-chevron-down"></i></span>
+      </button>
+      <div id="faq2-panel" class="accordion-content" role="region" aria-labelledby="faq2-header">
+        <p><span class="answer-icon"><i class="fas fa-info-circle"></i></span>Yes, MBBS graduates can explore *public health, hospital administration, research, and teaching roles*.</p>
+      </div>
+    </div>
+
+    <div class="accordion-item">
+      <button class="accordion-header" aria-expanded="false" aria-controls="faq3-panel">
+        <span class="question-icon"><i class="fas fa-question"></i></span>
+        <span class="question-text">What are the PG options after MBBS?</span>
+        <span class="toggle-icon"><i class="fas fa-chevron-down"></i></span>
+      </button>
+      <div id="faq3-panel" class="accordion-content" role="region" aria-labelledby="faq3-header">
+        <p><span class="answer-icon"><i class="fas fa-info-circle"></i></span>*MD/MS in various specialties, DNB programs, MPH (Public Health), MBA in Hospital Administration*.</p>
+      </div>
+    </div>
+
+    <div class="accordion-item">
+      <button class="accordion-header" aria-expanded="false" aria-controls="faq4-panel">
+        <span class="question-icon"><i class="fas fa-question"></i></span>
+        <span class="question-text">What is the workload like for MBBS students and doctors?</span>
+        <span class="toggle-icon"><i class="fas fa-chevron-down"></i></span>
+      </button>
+      <div id="faq4-panel" class="accordion-content" role="region" aria-labelledby="faq4-header">
+        <p><span class="answer-icon"><i class="fas fa-info-circle"></i></span>The academic load is *heavy, and the profession demands **long working hours and emergency duty readiness*.</p>
+      </div>
+    </div>
+
+    <div class="accordion-item">
+      <button class="accordion-header" aria-expanded="false" aria-controls="faq5-panel">
+        <span class="question-icon"><i class="fas fa-question"></i></span>
+        <span class="question-text">Is an MBBS degree from abroad valid in India?</span>
+        <span class="toggle-icon"><i class="fas fa-chevron-down"></i></span>
+      </button>
+      <div id="faq5-panel" class="accordion-content" role="region" aria-labelledby="faq5-header">
+        <p><span class="answer-icon"><i class="fas fa-info-circle"></i></span>Yes, provided the foreign MBBS degree is recognized by the NMC (India), and the graduate clears the *FMGE (Foreign Medical Graduate Examination)*.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<style>
+  .faq-section-container {
+    background: #ffffff;
+    border-radius: 20px;
+    padding: 30px;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.08);
+    margin-top: 30px;
+    /* Added margin for spacing from previous sections */
+  }
+
+  .faq-section-header {
+    background: linear-gradient(135deg, #007bff, #2575fc);
+    /* Vibrant blue-purple gradient */
+    color: #ffffff;
+    padding: 25px 30px;
+    border-radius: 15px;
+    margin-bottom: 30px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .faq-section-header::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('data:image/svg+xml;utf8,<svg width="60" height="60" viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg"><g fill="none" fill-rule="evenodd"><g fill="%23ffffff" fill-opacity=".07"><path d="M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zm0-30V0H4v4H0v2h4v4h2V6h4V4H6z" fill="%23fff" fill-opacity=".1"/></g></g></svg>') repeat;
+    opacity: 0.1;
+    pointer-events: none;
+  }
+
+  .faq-section-header i {
+    font-size: 2.8rem;
+    color: #ffffff;
+    margin-bottom: 10px;
+    display: block;
+  }
+
+  .faq-section-header h2 {
+    margin: 0;
+    font-size: 2.2rem;
+    font-weight: 700;
+    color: #ffffff;
+  }
+
+  .header-description {
+    font-size: 1rem;
+    color: rgba(255, 255, 255, 0.9);
+    line-height: 1.5;
+    max-width: 700px;
+    margin: 10px auto 0;
+  }
+
+  /* Accordion Styles */
+  .accordion-container {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .accordion-item {
+    border: 1px solid #e0e0e0;
+    border-radius: 12px;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+  }
+
+  .accordion-item:hover {
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+    transform: translateY(-2px);
+  }
+
+  .accordion-header {
+    width: 100%;
+    padding: 20px 25px;
+    background-color: #f8faff;
+    /* Lighter background for header */
+    border: none;
+    text-align: left;
+    font-size: 1.15rem;
+    font-weight: 600;
+    color: #333333;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    border-bottom: 1px solid transparent;
+    /* For separation when open */
+  }
+
+  .accordion-header:hover {
+    background-color: #eef2f8;
+  }
+
+  .accordion-header[aria-expanded="true"] {
+    background-color: #e0e7ff;
+    /* Slightly darker when open */
+    color: #2a5298;
+    border-bottom: 1px solid #d4deff;
+  }
+
+  .question-icon {
+    font-size: 1.3rem;
+    color: #007bff;
+    /* Primary brand color for question mark */
+    flex-shrink: 0;
+  }
+
+  .question-text {
+    flex-grow: 1;
+  }
+
+  .toggle-icon {
+    font-size: 1.1rem;
+    color: #666;
+    transition: transform 0.3s ease;
+  }
+
+  .accordion-header[aria-expanded="true"] .toggle-icon {
+    transform: rotate(180deg);
+    color: #2a5298;
+  }
+
+  .accordion-content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s ease-out, padding 0.4s ease-out;
+    background-color: #ffffff;
+    padding: 0 25px;
+    /* No vertical padding when closed */
+  }
+
+  .accordion-content p {
+    margin: 0;
+    padding: 20px 0;
+    /* Vertical padding when open */
+    color: #555555;
+    font-size: 1rem;
+    line-height: 1.6;
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  .answer-icon {
+    font-size: 1.1rem;
+    color: #4CAF50;
+    /* Green for answer info */
+    flex-shrink: 0;
+    padding-top: 2px;
+    /* Align with text */
+  }
+
+  /* JavaScript will add this class to expand content */
+  .accordion-content.is-open {
+    max-height: 500px;
+    /* Adjust as needed for max content height */
+    padding: 0 25px 20px;
+  }
+
+  /* Responsive Adjustments */
+  @media (max-width: 768px) {
+    .faq-section-container {
+      padding: 20px;
+    }
+
+    .faq-section-header {
+      padding: 20px 25px;
+      margin-bottom: 20px;
+    }
+
+    .faq-section-header i {
+      font-size: 2.2rem;
+    }
+
+    .faq-section-header h2 {
+      font-size: 1.8rem;
+    }
+
+    .header-description {
+      font-size: 0.9rem;
+    }
+
+    .accordion-header {
+      padding: 15px 20px;
+      font-size: 1rem;
+      gap: 10px;
+    }
+
+    .question-icon {
+      font-size: 1.1rem;
+    }
+
+    .toggle-icon {
+      font-size: 0.9rem;
+    }
+
+    .accordion-content p {
+      padding: 15px 0;
+      font-size: 0.95rem;
+    }
+  }
+</style>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    const accordionHeaders = document.querySelectorAll('.accordion-header');
+
+    accordionHeaders.forEach(header => {
+      header.addEventListener('click', () => {
+        const currentAccordionItem = header.closest('.accordion-item');
+        const currentContent = currentAccordionItem.querySelector('.accordion-content');
+        const isExpanded = header.getAttribute('aria-expanded') === 'true';
+
+        // Close all other open accordion items
+        accordionHeaders.forEach(otherHeader => {
+          const otherAccordionItem = otherHeader.closest('.accordion-item');
+          const otherContent = otherAccordionItem.querySelector('.accordion-content');
+          if (otherHeader !== header && otherHeader.getAttribute('aria-expanded') === 'true') {
+            otherHeader.setAttribute('aria-expanded', 'false');
+            otherContent.classList.remove('is-open');
+          }
+        });
+
+        // Toggle current item
+        if (!isExpanded) {
+          header.setAttribute('aria-expanded', 'true');
+          currentContent.classList.add('is-open');
+        } else {
+          header.setAttribute('aria-expanded', 'false');
+          currentContent.classList.remove('is-open');
+        }
+      });
+    });
+  });
+</script>
+
+
+
+
+        
+
+        <!-- Bootstrap 4 JS and dependencies -->
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
+
 </html>
