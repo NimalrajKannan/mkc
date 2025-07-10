@@ -1,0 +1,1258 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- google fonts -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+        rel="stylesheet">
+    <!-- Favicon -->
+    <!-- <link rel="shortcut icon" type="image/x-icon" href="assets/images/logo/favicon.png"> -->
+    <link rel="shortcut icon" href="assets/images/logo/favicon.png" type="image/x-icon">
+    <!-- Other css -->
+    <link rel="stylesheet" href="assets/css/animate.css">
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/icofont.min.css">
+    <link rel="stylesheet" href="assets/css/swiper.min.css">
+    <link rel="stylesheet" href="assets/css/hc-offcanvas-nav.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+
+    <title>MustKnowColleges</title>
+
+    <script src="./assets/js/fserver.js"></script>
+    <style>
+        .heroheading {
+            color: #007bff;
+        }
+
+        /* Preloader container */
+        .preloader {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: rgba(255, 255, 255, 0.9);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 9999;
+        }
+
+        /* Preloader inner styling */
+        .preloader-inner {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+        }
+
+        /* Preloader icon (gradient border) */
+        .preloader-icon {
+            display: inline-block;
+            position: relative;
+            width: 120px;
+            /* Adjust size of the spinning border */
+            height: 120px;
+            border-radius: 50%;
+            border: 5px solid transparent;
+            /* Transparent border */
+            border-top: 5px solid transparent;
+            border-right: 5px solid transparent;
+            animation: spin 2s linear infinite, borderColor 3s linear infinite;
+        }
+
+        /* Logo inside the preloader */
+        .preloader-icon img {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 2;
+        }
+
+        /* Gradient border animation */
+        @keyframes borderColor {
+            0% {
+                border-top: 5px solid rgb(253, 134, 29);
+                border-right: 5px solid rgb(43, 61, 255);
+            }
+
+            50% {
+                border-top: 5px solid rgba(252, 176, 69, 1);
+                border-right: 5px solid rgb(43, 61, 255);
+            }
+
+            100% {
+                border-top: 5px solid rgb(43, 61, 255);
+                border-right: 5px solid rgb(253, 134, 29);
+            }
+        }
+
+        /* Spinning animation for the border */
+        @keyframes spin {
+            0% {
+                transform: rotate(0deg);
+            }
+
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- preloader start here -->
+    <div class="preloader">
+        <div class="preloader-inner">
+            <div class="preloader-icon">
+                <span></span>
+                <span></span>
+                <img src="./assets/images/logo/favicon.png" alt="" width="100px">
+            </div>
+        </div>
+    </div>
+
+
+
+    <!-- ========== Mobile-nav section start here ========== -->
+    <div class="mobile-menu">
+        <div class="container">
+            <div class="mobile-menu-wrapper">
+                <div class="logo">
+                    <a href="index.html">
+                        <img src="assets/images/logo/logo.png" alt="Mukti" width="200px">
+                    </a>
+                </div>
+                <div class="open-menu"><i class="icofont-navigation-menu"></i></div>
+            </div>
+            <nav id="mobile-nav">
+                <ul class="home-nav">
+                    <li class="home">
+                        <a href="index.html">Home</a>
+
+                    </li>
+                </ul>
+                <ul class="home-nav">
+                    <li class="home">
+                        <a href="index.html">About</a>
+
+                    </li>
+                </ul>
+                <ul class="home-nav">
+                    <li class="home">
+                        <a href="./mck-entrences.html">Must Known Entrences Exams in India & Abroad</a>
+
+                    </li>
+                </ul>
+
+                <ul class="home-nav">
+                    <li class="home">
+                        <a href="./scholarship.html">Scholarship Info</a>
+
+                    </li>
+                </ul>
+
+
+
+
+            </nav>
+        </div>
+    </div>
+    <!-- ========== Mobile-nav section end here ========== -->
+
+
+    <style>
+        .header-contact-info {
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+            margin-top: 10px;
+        }
+
+        .header-contact-info .item {
+            display: flex;
+            align-items: center;
+            padding: 10px 20px;
+            margin-left: 10px;
+
+            background-color: #f9f9f9;
+            border-radius: 8px;
+            transition: all 0.3s ease-in-out;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+
+        }
+
+        .header-contact-info .item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+        }
+
+        .header-contact-info .item-inner {
+            display: flex;
+            align-items: center;
+        }
+
+        .header-contact-info .item-thumb {
+            font-size: 25px;
+            color: #007bff;
+            margin-right: 15px;
+        }
+
+        .header-contact-info .item-content {
+            font-size: 14px;
+        }
+
+        .header-contact-info .item-content span {
+            font-weight: bold;
+            color: #333;
+        }
+
+        .header-contact-info .item-content p {
+            margin: 0;
+            color: #555;
+        }
+
+        .header-contact-info .item-content p a {
+            text-decoration: none;
+            color: #007bff;
+        }
+
+        @media (max-width: 767px) {
+            .header-contact-info {
+                flex-direction: column;
+                align-items: flex-start;
+                padding-left: 10px;
+            }
+
+            .header-contact-info .item {
+                margin-bottom: 15px;
+                width: 100%;
+            }
+
+            .header-contact-info .item-thumb {
+                font-size: 28px;
+            }
+
+            .header-contact-info .item-content span {
+                font-size: 16px;
+            }
+        }
+    </style>
+
+    <!-- ==========Header Section Starts Here========== -->
+    <header class="header-section d-none d-lg-block">
+        <div class="header-top">
+            <div class="container">
+                <div class="row justify-content-between align-items-center px-15">
+                    <div class="header-logo">
+                        <a href="index.html" class="logo"><img src="assets/images/logo/New-Logos.png" alt="logo"
+                                width="300px"></a>
+                    </div>
+                    <ul class="header-contact-info d-flex align-items-center">
+                        <li class="item">
+                            <a href="tel:+919585222121">
+                                <div class="item-inner">
+                                    <div class="item-thumb">
+                                        <i class="icofont-phone"></i> <!-- Icon for Phone -->
+                                    </div>
+                                    <div class="item-content">
+
+                                        <p>+91 9585222121</p>
+                                    </div>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="item">
+                            <a href="tel:+918220004233">
+                                <div class="item-inner">
+                                    <div class="item-thumb">
+                                        <i class="icofont-phone"></i> <!-- Icon for Phone -->
+                                    </div>
+                                    <div class="item-content">
+
+                                        <p>+91 8220004233</p>
+                                    </div>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="item">
+                            <a href="mailto:mustknowcolleges@gmail.com">
+                                <div class="item-inner">
+                                    <div class="item-thumb">
+                                        <i class="icofont-email"></i> <!-- Icon for Email -->
+                                    </div>
+                                    <div class="item-content">
+
+                                        <p>
+                                            mustknowcolleges@gmail.com</p>
+                                    </div>
+                                </div>
+                            </a>
+                        </li>
+
+                    </ul>
+
+                </div>
+            </div>
+        </div>
+
+        <div class="header-bottom">
+            <nav class="container">
+                <div class="primary-menu">
+                    <div class="menu-area">
+                        <div class="row justify-content-between px-15">
+                            <ul class="main-menu d-flex">
+
+                                <li class="active">
+                                    <a href="#">&nbsp;</a>
+
+                                </li>
+                                <li class="active">
+                                    <a href="#">&nbsp;</a>
+
+                                </li>
+                                <li class="active">
+                                    <a href="#">&nbsp;</a>
+
+                                </li>
+                                <li class="active">
+                                    <a href="#">&nbsp;</a>
+
+                                </li>
+                                <li class="active">
+                                    <a href="#">&nbsp;</a>
+
+                                </li>
+
+                                <li class="active">
+                                    <a href="index.html" style="font-size: 20px;">Home</a>
+
+                                </li>
+
+                                <li class="active">
+                                    <a href="./about.html" style="font-size: 20px;">About</a>
+
+                                </li>
+
+                                <li class="active">
+                                    <a href="./mck-entrences.html" style="font-size: 20px;">Must Known Entrences Exams
+                                        in India & Abroad
+                                    </a>
+
+                                </li>
+
+                                <li class="active">
+                                    <a href="scholarship.html" style="font-size: 20px;">Scholarship Info</a>
+
+                                </li>
+
+
+                        </div>
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </header>
+    <!-- ==========Header Section Ends Here========== -->
+
+    <!-- <div id="header">
+
+</div>  -->
+    <!-- ==========Banner Section Start Here========== -->
+
+    <!-- ==========Banner Section Ends Here========== -->
+
+
+    <!-- ==========Feature Section Start Here========== -->
+
+    <style>
+        .img-radious {
+
+            border: 3px solid transparent;
+            border-image: linear-gradient(153deg, rgba(131, 58, 180, 1) 0%, rgba(253, 29, 29, 1) 50%, rgba(252, 176, 69, 1) 100%);
+            border-image-slice: 1;
+            border-radius: 16px;
+        }
+
+        .feature-item {
+            padding: 20px 24px !important;
+        }
+
+        .lab-thumb {
+            margin-bottom: 20px !important;
+        }
+    </style>
+
+    <style>
+        @media (min-width: 992px) {
+            .padding-tb {
+                padding: 50px 0 !important;
+            }
+        }
+
+        .bg-clr {
+            width: 100%;
+            background-color: #007bff;
+            padding: 10px 10px;
+            color: #f9f9f9 !important;
+            border-radius: 5px;
+            font-size: 24px;
+        }
+    </style>
+
+
+    <!-- ==========Page Header Section Ends Here========== -->
+
+
+
+
+    <style>
+        /* Style for the active tab */
+        .department-section.style-1 .section-content .department-top .dep-tab li a.active {
+
+            border: 2px solid transparent;
+            border-radius: 4px;
+            border-image: linear-gradient(153deg, rgba(131, 58, 180, 1) 0%, rgba(253, 29, 29, 1) 50%, rgba(252, 176, 69, 1) 100%);
+            border-image-slice: 1;
+
+        }
+    </style>
+
+
+
+    <section class="department-section padding-tb style-1 ">
+
+        <div class="section-header wow fadeInUp" data-wow-delay="" data-wow-duration="1s">
+            <h2> <span class="heroheading">Medical & Life Sciences</span> Your Gateway to Healing, Innovation & Research
+            </h2>
+            <p class="hero-subtext mb-3 d-flex justify-content-center" style="color: var(--sec-clr);">
+                Dreaming of a career in Medicine, Ayurveda, or Biomedical Research? Here’s your roadmap to India’s top
+                medical institutes through prestigious entrance exams.
+                With over 15 lakh+ aspirants annually, Medical & Life Sciences remains one of the most competitive yet
+                rewarding domains after 12th and graduation.
+            </p>
+        </div>
+
+
+
+
+
+
+
+
+
+
+        <style>
+            /* General icon styles */
+            .icon-style {
+                font-size: 40px;
+                /* Icon size */
+                margin-right: 15px;
+                /* Space between icon and text */
+                transition: all 0.3s ease;
+                /* Smooth transition for hover effect */
+            }
+
+            /* Specific colors for each section */
+            .projected-growth {
+                color: #ff6347;
+                /* Tomato Red */
+            }
+
+            .salary-range {
+                color: #1e90ff;
+                /* Dodger Blue */
+            }
+
+            .global-pathways {
+                color: #32cd32;
+                /* Lime Green */
+            }
+
+            .research-edge {
+                color: #ff1493;
+                /* Deep Pink */
+            }
+
+            .get-guidance {
+                color: #ff8c00;
+                /* Dark Orange */
+            }
+
+            /* Hover effect - icons will get a highlight */
+            .icon-style:hover {
+                color: #fff;
+                /* Change icon color on hover */
+                background-color: #000;
+                /* Black background on hover */
+                border-radius: 50%;
+                /* Rounded border for the icon */
+                padding: 10px;
+                /* Space between icon and background */
+            }
+
+            .certificat-section {
+                background: url(../../assets/images/certificat/bg.jpg);
+                background-position: right;
+                background-repeat: no-repeat;
+
+            }
+
+            /* General Card Styles */
+            .info-card {
+                background: #fff;
+                padding: 20px;
+                border-radius: 10px;
+                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+                text-align: center;
+                transition: all 0.3s ease-in-out;
+                margin-bottom: 30px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                flex-direction: column;
+            }
+
+            /* Icon Styling inside the Card */
+            .icon-style {
+                font-size: 50px;
+                margin-bottom: 20px;
+                transition: all 0.3s ease-in-out;
+            }
+
+            /* Specific colors for each section */
+            .projected-growth {
+                color: #ff6347;
+                /* Tomato Red */
+            }
+
+            .salary-range {
+                color: #1e90ff;
+                /* Dodger Blue */
+            }
+
+            .global-pathways {
+                color: #32cd32;
+                /* Lime Green */
+            }
+
+            .research-edge {
+                color: #ff1493;
+                /* Deep Pink */
+            }
+
+            .get-guidance {
+                color: #ff8c00;
+                /* Dark Orange */
+            }
+
+            /* Hover Effect on Icon */
+            .icon-style:hover {
+                color: #fff;
+                background-color: #000;
+                border-radius: 50%;
+                padding: 10px;
+            }
+
+            /* Card Hover Effect */
+            .info-card:hover {
+                transform: translateY(-10px);
+                /* Lift the card */
+                box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
+                /* Enhanced shadow */
+            }
+
+            /* Add spacing around text content */
+            .info-content {
+                padding: 10px 0;
+            }
+
+            .info-content h4 {
+                font-size: 18px;
+                font-weight: bold;
+                margin-bottom: 10px;
+            }
+
+            .info-content p {
+                font-size: 14px;
+                color: #666;
+            }
+
+            /* Responsive Design for Cards */
+            @media (max-width: 767px) {
+                .info-card {
+                    padding: 15px;
+                }
+
+                .icon-style {
+                    font-size: 40px;
+                }
+
+                .info-content h4 {
+                    font-size: 16px;
+                }
+            }
+        </style>
+
+
+
+
+        <style>
+            /* Customizing Section Heading */
+            .section-heading {
+                font-size: 24px;
+                font-weight: bold;
+                color: #4a90e2;
+                /* Theme Color */
+                margin-bottom: 15px;
+            }
+
+            /* Tab content styling */
+            .post-content {
+                padding: 20px;
+                background-color: #f9f9f9;
+                border-radius: 8px;
+                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            }
+
+            /* Tab button styles */
+            .nav.dep-tab li {
+                display: inline-block;
+                margin-right: 20px;
+                text-align: center;
+            }
+
+            /* Icon styling */
+            .icofont-book-alt,
+            .icofont-stethoscope {
+                font-size: 30px;
+                color: #4a90e2;
+                /* Theme Color */
+            }
+
+            /* Tab Button Hover Effect */
+            .nav.dep-tab li a:hover {
+                color: #fff;
+                background-color: #4a90e2;
+                /* Hover effect with theme color */
+                border-radius: 5px;
+                padding: 10px;
+            }
+
+            /* Small font for tab names */
+            .nav.dep-tab p {
+                font-size: 12px;
+                color: #555;
+                margin-top: 8px;
+            }
+
+            /* Responsive Styling for smaller devices */
+            @media (max-width: 767px) {
+                .nav.dep-tab li {
+                    margin-right: 15px;
+                }
+
+                .section-heading {
+                    font-size: 20px;
+                }
+
+                .post-content {
+                    padding: 15px;
+                }
+
+                .icofont-book-alt,
+                .icofont-stethoscope {
+                    font-size: 28px;
+                }
+            }
+        </style>
+
+
+        <section class="department-section padding-tb style-1">
+            <div class="container">
+                <div class="department-wrapper">
+                    <div class="section-content">
+                        <div class="row">
+                           <div class="col-12">
+  <div class="department-top">
+    <ul class="nav dep-tab" role="tablist">
+      <!-- Tab 1 -->
+      <li class="wow fadeInUp bordergrd" data-wow-duration="1s" data-wow-delay=".1s">
+        <a class="active" href="#tab1" role="tab" data-toggle="tab">
+          <img src="assets/images/depart/icon/01.png" alt="Medical">
+        </a>
+        <p class="mt-2">Medical Courses</p>
+      </li>
+      <!-- Tab 2 -->
+      <li class="wow fadeInUp bordergrd" data-wow-duration="1s" data-wow-delay=".2s">
+        <a href="#tab2" role="tab" data-toggle="tab">
+          <img src="assets/images/depart/icon/02.png" alt="Engineering">
+        </a>
+        <p class="mt-2">Engineering</p>
+      </li>
+      <!-- Tab 3 -->
+      <li class="wow fadeInUp bordergrd" data-wow-duration="1s" data-wow-delay=".3s">
+        <a href="#tab3" role="tab" data-toggle="tab">
+          <img src="assets/images/depart/icon/03.png" alt="Law">
+        </a>
+        <p class="mt-2">Law</p>
+      </li>
+      <!-- Tab 4 -->
+      <li class="wow fadeInUp bordergrd" data-wow-duration="1s" data-wow-delay=".4s">
+        <a href="#tab4" role="tab" data-toggle="tab">
+          <img src="assets/images/depart/icon/04.png" alt="Management">
+        </a>
+        <p class="mt-2">Management</p>
+      </li>
+      <!-- Tab 5 -->
+      <li class="wow fadeInUp bordergrd" data-wow-duration="1s" data-wow-delay=".5s">
+        <a href="#tab5" role="tab" data-toggle="tab">
+          <img src="assets/images/depart/icon/05.png" alt="Arts">
+        </a>
+        <p class="mt-2">Arts & Humanities</p>
+      </li>
+      <!-- Tab 6 -->
+      <li class="wow fadeInUp bordergrd" data-wow-duration="1s" data-wow-delay=".6s">
+        <a href="#tab6" role="tab" data-toggle="tab">
+          <img src="assets/images/depart/icon/06.png" alt="Science">
+        </a>
+        <p class="mt-2">Science</p>
+      </li>
+      <!-- Tab 7 -->
+      <li class="wow fadeInUp bordergrd" data-wow-duration="1s" data-wow-delay=".7s">
+        <a href="#tab7" role="tab" data-toggle="tab">
+          <img src="assets/images/depart/icon/07.png" alt="Commerce">
+        </a>
+        <p class="mt-2">Commerce</p>
+      </li>
+      <!-- Tab 8 -->
+      <li class="wow fadeInUp bordergrd" data-wow-duration="1s" data-wow-delay=".8s">
+        <a href="#tab8" role="tab" data-toggle="tab">
+          <img src="assets/images/depart/icon/08.png" alt="Computer Science">
+        </a>
+        <p class="mt-2">Computer Science</p>
+      </li>
+      <!-- Tab 9 -->
+      <li class="wow fadeInUp bordergrd" data-wow-duration="1s" data-wow-delay=".9s">
+        <a href="#tab9" role="tab" data-toggle="tab">
+          <img src="assets/images/depart/icon/09.png" alt="Design">
+        </a>
+        <p class="mt-2">Design & Architecture</p>
+      </li>
+      <!-- Tab 10 -->
+      <li class="wow fadeInUp bordergrd" data-wow-duration="1s" data-wow-delay="1s">
+        <a href="#tab10" role="tab" data-toggle="tab">
+          <img src="assets/images/depart/icon/10.png" alt="Education">
+        </a>
+        <p class="mt-2">Education</p>
+      </li>
+      <!-- Tab 11 -->
+      <li class="wow fadeInUp bordergrd" data-wow-duration="1s" data-wow-delay="1.1s">
+        <a href="#tab11" role="tab" data-toggle="tab">
+          <img src="assets/images/depart/icon/11.png" alt="Agriculture">
+        </a>
+        <p class="mt-2">Agriculture</p>
+      </li>
+    </ul>
+  </div>
+
+  <div class="department-bottom wow fadeInUp mt-5" data-wow-duration="1s" data-wow-delay=".2s">
+    <div class="tab-content">
+
+      <!-- TAB 1 -->
+      <div role="tabpanel" class="tab-pane fade in active" id="tab1">
+        <div class="row">
+          <div class="col-12">
+            <div class="post-content">
+              <h3 class="section-heading">Medical Courses</h3>
+              <div class="info-cards">
+                <a href="MBBS - Bachelor of Medicine and Bachelor of Surgery.html">
+                <div  class="info-card">
+                  <img src="./assets/images/new-image/PCB.jpg" alt="MBBS" width="100px" style="margin-top:10px; margin-bottom:10px;">
+                  <p>MBBS - Bachelor of Medicine and Bachelor of Surgery</p>
+                </div>
+              </a>
+                <div class="info-card">
+                  <img src="./assets/images/new-image/PCB.jpg" alt="BDS" width="100px" style="margin-top:10px; margin-bottom:10px;">
+                  <p>BDS - Bachelor of Dental Surgery</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- TAB 2 -->
+      <div role="tabpanel" class="tab-pane fade" id="tab2">
+        <div class="row">
+          <div class="col-12">
+            <div class="post-content">
+              <h3 class="section-heading">Engineering Courses</h3>
+              <div class="info-cards">
+                <div class="info-card">
+                  <img src="./assets/images/new-image/engg.jpg" alt="CSE" width="100px" style="margin-top:10px; margin-bottom:10px;">
+                  <p>B.Tech - Computer Science Engineering</p>
+                </div>
+                <div class="info-card">
+                  <img src="./assets/images/new-image/engg.jpg" alt="ECE" width="100px" style="margin-top:10px; margin-bottom:10px;">
+                  <p>B.Tech - Electronics & Communication</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- TAB 3 -->
+      <div role="tabpanel" class="tab-pane fade" id="tab3">
+        <div class="row">
+          <div class="col-12">
+            <div class="post-content">
+              <h3 class="section-heading">Law Courses</h3>
+              <div class="info-cards">
+                <div class="info-card">
+                  <img src="./assets/images/new-image/law.jpg" alt="LLB" width="100px" style="margin-top:10px; margin-bottom:10px;">
+                  <p>LLB - Bachelor of Laws</p>
+                </div>
+                <div class="info-card">
+                  <img src="./assets/images/new-image/law.jpg" alt="BA LLB" width="100px" style="margin-top:10px; margin-bottom:10px;">
+                  <p>BA LLB - Integrated Law</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- TAB 4 -->
+      <div role="tabpanel" class="tab-pane fade" id="tab4">
+        <div class="row">
+          <div class="col-12">
+            <div class="post-content">
+              <h3 class="section-heading">Management Courses</h3>
+              <div class="info-cards">
+                <div class="info-card">
+                  <img src="./assets/images/new-image/mgmt.jpg" alt="BBA" width="100px" style="margin-top:10px; margin-bottom:10px;">
+                  <p>BBA - Bachelor of Business Administration</p>
+                </div>
+                <div class="info-card">
+                  <img src="./assets/images/new-image/mgmt.jpg" alt="MBA" width="100px" style="margin-top:10px; margin-bottom:10px;">
+                  <p>MBA - Master of Business Administration</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- TAB 5 -->
+      <div role="tabpanel" class="tab-pane fade" id="tab5">
+        <div class="row">
+          <div class="col-12">
+            <div class="post-content">
+              <h3 class="section-heading">Arts & Humanities</h3>
+              <div class="info-cards">
+                <div class="info-card">
+                  <img src="./assets/images/new-image/arts.jpg" alt="BA English" width="100px" style="margin-top:10px; margin-bottom:10px;">
+                  <p>BA - English Literature</p>
+                </div>
+                <div class="info-card">
+                  <img src="./assets/images/new-image/arts.jpg" alt="BA History" width="100px" style="margin-top:10px; margin-bottom:10px;">
+                  <p>BA - History</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- TAB 6 -->
+      <div role="tabpanel" class="tab-pane fade" id="tab6">
+        <div class="row">
+          <div class="col-12">
+            <div class="post-content">
+              <h3 class="section-heading">Science Courses</h3>
+              <div class="info-cards">
+                <div class="info-card">
+                  <img src="./assets/images/new-image/science.jpg" alt="BSc Physics" width="100px" style="margin-top:10px; margin-bottom:10px;">
+                  <p>B.Sc - Physics</p>
+                </div>
+                <div class="info-card">
+                  <img src="./assets/images/new-image/science.jpg" alt="BSc Chemistry" width="100px" style="margin-top:10px; margin-bottom:10px;">
+                  <p>B.Sc - Chemistry</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- TAB 7 -->
+      <div role="tabpanel" class="tab-pane fade" id="tab7">
+        <div class="row">
+          <div class="col-12">
+            <div class="post-content">
+              <h3 class="section-heading">Commerce Courses</h3>
+              <div class="info-cards">
+                <div class="info-card">
+                  <img src="./assets/images/new-image/commerce.jpg" alt="BCom" width="100px" style="margin-top:10px; margin-bottom:10px;">
+                  <p>B.Com - General</p>
+                </div>
+                <div class="info-card">
+                  <img src="./assets/images/new-image/commerce.jpg" alt="BCom CA" width="100px" style="margin-top:10px; margin-bottom:10px;">
+                  <p>B.Com - Computer Applications</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- TAB 8 -->
+      <div role="tabpanel" class="tab-pane fade" id="tab8">
+        <div class="row">
+          <div class="col-12">
+            <div class="post-content">
+              <h3 class="section-heading">Computer Science</h3>
+              <div class="info-cards">
+                <div class="info-card">
+                  <img src="./assets/images/new-image/cs.jpg" alt="BSc CS" width="100px" style="margin-top:10px; margin-bottom:10px;">
+                  <p>B.Sc - Computer Science</p>
+                </div>
+                <div class="info-card">
+                  <img src="./assets/images/new-image/cs.jpg" alt="BCA" width="100px" style="margin-top:10px; margin-bottom:10px;">
+                  <p>BCA - Bachelor of Computer Applications</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- TAB 9 -->
+      <div role="tabpanel" class="tab-pane fade" id="tab9">
+        <div class="row">
+          <div class="col-12">
+            <div class="post-content">
+              <h3 class="section-heading">Design & Architecture</h3>
+              <div class="info-cards">
+                <div class="info-card">
+                  <img src="./assets/images/new-image/design.jpg" alt="BArch" width="100px" style="margin-top:10px; margin-bottom:10px;">
+                  <p>B.Arch - Bachelor of Architecture</p>
+                </div>
+                <div class="info-card">
+                  <img src="./assets/images/new-image/design.jpg" alt="BDes" width="100px" style="margin-top:10px; margin-bottom:10px;">
+                  <p>B.Des - Bachelor of Design</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- TAB 10 -->
+      <div role="tabpanel" class="tab-pane fade" id="tab10">
+        <div class="row">
+          <div class="col-12">
+            <div class="post-content">
+              <h3 class="section-heading">Education Courses</h3>
+              <div class="info-cards">
+                <div class="info-card">
+                  <img src="./assets/images/new-image/education.jpg" alt="B.Ed" width="100px" style="margin-top:10px; margin-bottom:10px;">
+                  <p>B.Ed - Bachelor of Education</p>
+                </div>
+                <div class="info-card">
+                  <img src="./assets/images/new-image/education.jpg" alt="M.Ed" width="100px" style="margin-top:10px; margin-bottom:10px;">
+                  <p>M.Ed - Master of Education</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- TAB 11 -->
+      <div role="tabpanel" class="tab-pane fade" id="tab11">
+        <div class="row">
+          <div class="col-12">
+            <div class="post-content">
+              <h3 class="section-heading">Agriculture & Allied Sciences</h3>
+              <div class="info-cards">
+                <div class="info-card">
+                  <img src="./assets/images/new-image/agri.jpg" alt="BSc Agri" width="100px" style="margin-top:10px; margin-bottom:10px;">
+                  <p>B.Sc - Agriculture</p>
+                </div>
+                <div class="info-card">
+                  <img src="./assets/images/new-image/agri.jpg" alt="BSc Horticulture" width="100px" style="margin-top:10px; margin-bottom:10px;">
+                  <p>B.Sc - Horticulture</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+
+
+
+        <style>
+            /* Section Heading */
+            .section-heading {
+                font-size: 26px;
+                font-weight: bold;
+                color: #4a90e2;
+                /* Theme Color */
+                margin-bottom: 30px;
+                text-align: center;
+            }
+
+            /* Info Cards Container */
+            .info-cards {
+                display: grid;
+                grid-template-columns: repeat(4, 1fr);
+                /* 4 cards per row */
+                gap: 20px;
+                margin-top: 20px;
+            }
+
+            /* Info Card Styles */
+            .info-card {
+                background-color: #fff;
+                padding: 20px;
+                border-radius: 10px;
+                box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+                text-align: center;
+                transition: all 0.3s ease;
+            }
+
+            /* Hover Effect for Cards */
+            .info-card:hover {
+                transform: translateY(-10px);
+                /* Hover effect to lift the card */
+                box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
+            }
+
+            /* Icon Style Inside Cards */
+            .info-card i {
+                font-size: 40px;
+                color: #4a90e2;
+                margin-bottom: 15px;
+            }
+
+            /* Header Style Inside Cards */
+            .info-card h5 {
+                font-size: 18px;
+                font-weight: bold;
+                color: #333;
+                margin-bottom: 10px;
+            }
+
+            /* Paragraph Style Inside Cards */
+            .info-card p {
+                font-size: 16px;
+                color: #555;
+                margin-bottom: 10px;
+            }
+
+            /* Responsive Design for Cards */
+            @media (max-width: 1200px) {
+                .info-cards {
+                    grid-template-columns: repeat(3, 1fr);
+                    /* 3 cards per row on medium screens */
+                }
+            }
+
+            @media (max-width: 991px) {
+                .info-cards {
+                    grid-template-columns: repeat(2, 1fr);
+                    /* 2 cards per row on smaller screens */
+                }
+            }
+
+            @media (max-width: 767px) {
+                .info-cards {
+                    grid-template-columns: 1fr;
+                    /* 1 card per row on mobile */
+                }
+
+                .info-card i {
+                    font-size: 35px;
+                }
+
+                .info-card h5 {
+                    font-size: 16px;
+                }
+            }
+        </style>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        <!-- ==========Newsletter Section Ends Here========== -->
+
+
+        <!-- ==========Footer Section Ends Here========== -->
+        <section class="footer-section style-1">
+            <div class="container">
+                <!--             
+            <div class="section-wrapper">
+                <div class="footer-top">
+                    <div class="row">
+                        <div class="col-12 col-sm-6 col-xl-3 wow fadeInUp" data-wow-duration="1s" data-wow-delay=".1s">
+                            <div class="contact-info">
+                                <h3>Contact Info</h3>
+                                <p>Rapidiously seize wireless strategic theme areas and corporate testing
+                                    procedures.
+                                    Uniquely</p>
+                                <ul class="lab-ul">
+                                    <li><i class="icofont-home"></i> Suite 02 New Elephant Road usa</li>
+                                    <li><i class="icofont-phone"></i> +880 142 258 123, 02-96936</li>
+                                    <li><i class="icofont-envelope"></i> <a href="#"> info@mukti.com</a></li>
+                                    <li><i class="icofont-globe"></i> <a href="#"> info@mukti.com</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col-12 col-sm-6 col-xl-3 wow fadeInUp" data-wow-duration="1s" data-wow-delay=".2s">
+                            <div class="doctor-info mb-5 mb-sm-0">
+                                <h3>Our Doctors</h3>
+                                <ul class="lab-ul">
+                                    <li><i class="icofont-double-right"></i><a href="#"> Dr. Nick Sims</a></li>
+                                    <li><i class="icofont-double-right"></i><a href="#"> Dr. Michael Linden</a></li>
+                                    <li><i class="icofont-double-right"></i><a href="#"> Dr. Max Turner</a></li>
+                                    <li><i class="icofont-double-right"></i><a href="#"> Dr. Amy Adams</a></li>
+                                    <li><i class="icofont-double-right"></i><a href="#"> Dr. Julia Jameson</a></li>
+                                    <li><i class="icofont-double-right"></i><a href="#"> Dr. Michael Linden</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col-12 col-sm-6 col-xl-3 wow fadeInUp" data-wow-duration="1s" data-wow-delay=".3s">
+                            <div class="service-info  mb-5 mb-sm-0">
+                                <h3>Our Services</h3>
+                                <ul class="lab-ul">
+                                    <li><i class="icofont-double-right"></i><a href="#">Outpatient Surgery</a></li>
+                                    <li><i class="icofont-double-right"></i><a href="#">Cardiac Clinic</a></li>
+                                    <li><i class="icofont-double-right"></i><a href="#">Ophthalmology Clinic</a>
+                                    </li>
+                                    <li><i class="icofont-double-right"></i><a href="#">Gynaecological Clinic</a>
+                                    </li>
+                                    <li><i class="icofont-double-right"></i><a href="#">Outpatient
+                                            Rehabilitation</a>
+                                    </li>
+                                    <li><i class="icofont-double-right"></i><a href="#">Ophthalmology Clinic</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col-12 col-sm-6 col-xl-3 wow fadeInUp" data-wow-duration="1s" data-wow-delay=".4s">
+                            <div class="time-info">
+                                <h3>opening hours</h3>
+                                <div class="dep-item">
+                                    <div class="dep-item-inner d-flex justify-content-between">
+                                        <div class="day-name">Satarday</div>
+                                        <div class="day-time">8:00 am-10:00 pm</div>
+                                    </div>
+                                </div>
+                                <div class="dep-item">
+                                    <div class="dep-item-inner d-flex justify-content-between">
+                                        <div class="day-name">Sunday</div>
+                                        <div class="day-time">6:00 am-8:00 pm</div>
+                                    </div>
+                                </div>
+                                <div class="dep-item">
+                                    <div class="dep-item-inner d-flex justify-content-between">
+                                        <div class="day-name">Monday</div>
+                                        <div class="day-time">6:00 am-2:00 pm</div>
+                                    </div>
+                                </div>
+                                <div class="dep-item">
+                                    <div class="dep-item-inner d-flex justify-content-between">
+                                        <div class="day-name">Tuesday</div>
+                                        <div class="day-time">7:00 am-9:00 pm</div>
+                                    </div>
+                                </div>
+                                <div class="dep-item">
+                                    <div class="dep-item-inner d-flex justify-content-between">
+                                        <div class="day-name">Widnessday</div>
+                                        <div class="day-time">10:00 am-12:00 pm</div>
+                                    </div>
+                                </div>
+                                <div class="dep-item">
+                                    <div class="dep-item-inner d-flex justify-content-between">
+                                        <div class="day-name">Thirsday</div>
+                                        <div class="day-time">2:00 am-6:00 pm</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="footer-bottom">
+                    <div class="copyright text-center wow fadeInUp" data-wow-duration="1s" data-wow-delay=".1s">
+                        <span>Copyright &copy; 2021 <a href="index.html">
+                                mustknowcolleges</a></span>
+                    </div>
+                </div>
+            </div> -->
+            </div>
+        </section>
+        <!-- ==========Footer Section Ends Here========== -->
+
+        <!-- scrollToTop start here -->
+        <a href="#" class="scrollToTop"><i class="icofont-rounded-up"></i></a>
+        <!-- scrollToTop ending here -->
+
+
+
+
+        <!-- All Scripts -->
+        <script src="assets/js/jquery.js"></script>
+        <script src="assets/js/bootstrap.min.js"></script>
+        <script src="assets/js/waypoints.min.js"></script>
+        <script src="assets/js/swiper.min.js"></script>
+        <script src="assets/js/jquery.counterup.min.js"></script>
+        <script src="assets/js/wow.min.js"></script>
+        <script src="assets/js/circularProgressBar.min.js"></script>
+        <script src="assets/js/hc-offcanvas-nav.js"></script>
+        <script src="assets/js/functions.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MBBS Course Details</title>
+    <!-- Bootstrap 4 CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <!-- Google Fonts: Poppins -->
+     <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+        rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            color: #333;
+            line-height: 1.6;
+        }
+        .container {
+            padding: 2rem 1rem;
+            max-width: 1200px;
+        }
+        .section-title {
+            font-size: 2rem;
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+            color: #000;
+            display: flex;
+            align-items: center;
+            transition: color 0.3s ease;
+        }
+        .section-title:hover {
+            color: #000;
+        }
+        .section-title i {
+            margin-right: 0.75rem;
+            font-size: 1.5rem;
+            color:#007bff;
+        }
+        .subsection-title {
+            font-size: 1.5rem;
+            font-weight: 500;
+            margin: 1.5rem 0 1rem;
+            color: #000;
+            display: flex;
+            align-items: center;
+            transition: color 0.3s ease;
+        }
+        .subsection-title:hover {
+            color: #000;
+        }
+        .subsection-title i {
+            margin-right: 0.5rem;
+            font-size: 1.2rem;
+            color: #007bff;
+        }
+        .card {
+            border: none;
+            border-radius: 12px;
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+            margin-bottom: 2rem;
+            padding: 1.5rem;
+            background: #fff;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+        }
+        .list-group-item {
+            border: none;
+            padding: 0.75rem 0;
+            display: flex;
+            align-items: center;
+            font-size: 1rem;
+            transition: background 0.2s ease;
+        }
+        .list-group-item:hover {
+            background: #f1f9ff;
+            border-radius: 8px;
+        }
+        .list-group-item i {
+            margin-right: 0.75rem;
+            color: #007bff;
+        }
+        .table {
+            background: #fff;
+            border-radius: 8px;
+            overflow: hidden;
+        }
+        .table th, .table td {
+            padding: 1rem;
+            vertical-align: middle;
+        }
+        .table th i {
+            margin-right: 0.5rem;
+        }
+        .table tbody tr:hover {
+            background: #f1f9ff;
+        }
+        p {
+            font-size: 1rem;
+            margin-bottom: 1rem;
+        }
+        p i {
+            margin-right: 0.5rem;
+            color: #000;
+        }
+        /* Mobile Responsiveness */
+        @media (max-width: 768px) {
+            .container {
+                padding: 1.5rem 0.75rem;
+            }
+            .section-title {
+                font-size: 1.8rem;
+            }
+            .subsection-title {
+                font-size: 1.4rem;
+            }
+            .card {
+                padding: 1rem;
+                margin-bottom: 1.5rem;
+            }
+            .list-group-item {
+                font-size: 0.95rem;
+                padding: 0.5rem 0;
+            }
+            .table th, .table td {
+                font-size: 0.9rem;
+                padding: 0.75rem;
+            }
+        }
+        @media (max-width: 576px) {
+            .section-title {
+                font-size: 1.6rem;
+            }
+            .subsection-title {
+                font-size: 1.3rem;
+            }
+            .card {
+                padding: 0.75rem;
+            }
+            .list-group-item {
+                font-size: 0.9rem;
+            }
+            .table {
+                font-size: 0.85rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+
+    <!-- sec start -->
+    <div class="container">
+        <!-- 1. Course Overview -->
+        <div class="section-title"><i class="fas fa-book-medical"></i> Course Overview</div>
+        <div class="card">
+            <p>The MBBS (Bachelor of Medicine and Bachelor of Surgery) is a comprehensive 5.5-year undergraduate program that trains students to become qualified medical doctors. The program integrates a 4.5-year academic curriculum with a compulsory 1-year clinical internship. MBBS equips students with in-depth theoretical knowledge and hands-on clinical skills essential for diagnosing and treating a wide range of health conditions. It plays a vital role in strengthening healthcare systems and improving public health outcomes globally.</p>
+        </div>
+
+        <!-- 2. Who Should Pursue This Course? -->
+        <div class="section-title"><i class="fas fa-user-md"></i> Who Should Pursue This Course?</div>
+        <div class="card">
+            <ul class="list-group">
+                <li class="list-group-item"><i class="fas fa-heart"></i> Students passionate about healthcare and helping others</li>
+                <li class="list-group-item"><i class="fas fa-flask"></i> Interest in Biology, Chemistry, and Life Sciences</li>
+                <li class="list-group-item"><i class="fas fa-brain"></i> Aptitude for problem-solving and analytical thinking</li>
+                <li class="list-group-item"><i class="fas fa-briefcase-medical"></i> Willingness to work in high-pressure environments</li>
+                <li class="list-group-item"><i class="fas fa-stethoscope"></i> Aspiration to pursue careers in clinical practice, medical research, public health, or medical education</li>
+            </ul>
+        </div>
+
+        <!-- 3. Eligibility Criteria -->
+        <div class="section-title"><i class="fas fa-clipboard-check"></i> Eligibility Criteria</div>
+        <div class="card">
+            <div class="subsection-title"><i class="fas fa-graduation-cap"></i> UG</div>
+            <ul class="list-group">
+                <li class="list-group-item"><i class="fas fa-school"></i> 10+2 (Higher Secondary) in Science stream with Physics, Chemistry, Biology/Biotechnology</li>
+                <li class="list-group-item"><i class="fas fa-percentage"></i> Minimum 50% aggregate marks (General category), 40% (Reserved categories)</li>
+                <li class="list-group-item"><i class="fas fa-user-clock"></i> Minimum age: 17 years</li>
+            </ul>
+            <div class="subsection-title"><i class="fas fa-user-graduate"></i> PG</div>
+            <ul class="list-group">
+                <li class="list-group-item"><i class="fas fa-certificate"></i> MBBS degree from a recognized institution</li>
+                <li class="list-group-item"><i class="fas fa-file-alt"></i> Internship completion certificate</li>
+                <li class="list-group-item"><i class="fas fa-file-medical"></i> NEET-PG qualification required for MD/MS programs</li>
+            </ul>
+            <div class="subsection-title"><i class="fas fa-globe"></i> Others</div>
+            <ul class="list-group">
+                <li class="list-group-item"><i class="fas fa-language"></i> English proficiency required for abroad programs</li>
+                <li class="list-group-item"><i class="fas fa-passport"></i> Age eligibility per individual country/university regulations</li>
+            </ul>
+        </div>
+
+        <!-- 4. Entrance Exams & Admission Process -->
+        <div class="section-title"><i class="fas fa-file-signature"></i> Entrance Exams & Admission Process</div>
+        <div class="card">
+            <div class="subsection-title"><i class="fas fa-user-graduate"></i> UG</div>
+            <ul class="list-group">
+                <li class="list-group-item"><i class="fas fa-file-medical"></i> NEET-UG (Mandatory for all MBBS admissions in India)</li>
+            </ul>
+            <div class="subsection-title"><i class="fas fa-user-graduate"></i> PG</div>
+            <ul class="list-group">
+                <li class="list-group-item"><i class="fas fa-file-medical"></i> NEET-PG (Mandatory for MD/MS admissions in India)</li>
+            </ul>
+            <div class="subsection-title"><i class="fas fa-globe"></i> Others</div>
+            <ul class="list-group">
+                <li class="list-group-item"><i class="fas fa-university"></i> Direct Admission in select private colleges under Management Quota</li>
+            </ul>
+        </div>
+
+        <!-- 5. Course Duration -->
+        <div class="section-title"><i class="fas fa-clock"></i> Course Duration</div>
+        <div class="card">
+            <ul class="list-group">
+                <li class="list-group-item"><i class="fas fa-user-graduate"></i> UG: 5.5 years (4.5 years academic + 1-year internship)</li>
+                <li class="list-group-item"><i class="fas fa-user-graduate"></i> PG (MD/MS): 2–3 years</li>
+                <li class="list-group-item"><i class="fas fa-graduation-cap"></i> PhD: 2–3 years (optional after PG)</li>
+            </ul>
+        </div>
+
+        <!-- 6. Course Fees -->
+        <div class="section-title"><i class="fas fa-money-bill-wave"></i> Course Fees (India & Abroad)</div>
+        <div class="card">
+            <div class="subsection-title"><i class="fas fa-rupee-sign"></i> India</div>
+            <ul class="list-group">
+                <li class="list-group-item"><i class="fas fa-university"></i> Public colleges: ₹15,000 – ₹1,50,000 per year</li>
+                <li class="list-group-item"><i class="fas fa-building"></i> Private colleges: ₹5,00,000 – ₹25,00,000 per year</li>
+            </ul>
+            <div class="subsection-title"><i class="fas fa-globe"></i> Abroad</div>
+            <ul class="list-group">
+                <li class="list-group-item"><i class="fas fa-rupee-sign"></i> ₹25L – ₹75L total (Russia, China, Bangladesh)</li>
+                <li class="list-group-item"><i class="fas fa-rupee-sign"></i> ₹80L – ₹2Cr+ total (USA, UK, Australia)</li>
+            </ul>
+        </div>
+
+        <!-- 7. Curriculum & Specializations -->
+        <div class="section-title"><i class="fas fa-book"></i> Curriculum & Specializations</div>
+        <div class="card">
+            <div class="subsection-title"><i class="fas fa-list"></i> Core Subjects</div>
+            <ul class="list-group">
+                <li class="list-group-item"><i class="fas fa-notes-medical"></i> Anatomy</li>
+                <li class="list-group-item"><i class="fas fa-notes-medical"></i> Physiology</li>
+                <li class="list-group-item"><i class="fas fa-notes-medical"></i> Biochemistry</li>
+                <li class="list-group-item"><i class="fas fa-notes-medical"></i> Pathology</li>
+                <li class="list-group-item"><i class="fas fa-notes-medical"></i> Microbiology</li>
+                <li class="list-group-item"><i class="fas fa-notes-medical"></i> Pharmacology</li>
+                <li class="list-group-item"><i class="fas fa-notes-medical"></i> Forensic Medicine</li>
+                <li class="list-group-item"><i class="fas fa-notes-medical"></i> Internal Medicine</li>
+                <li class="list-group-item"><i class="fas fa-notes-medical"></i> Surgery</li>
+                <li class="list-group-item"><i class="fas fa-notes-medical"></i> Pediatrics</li>
+                <li class="list-group-item"><i class="fas fa-notes-medical"></i> Obstetrics & Gynecology</li>
+                <li class="list-group-item"><i class="fas fa-notes-medical"></i> Psychiatry</li>
+            </ul>
+            <div class="subsection-title"><i class="fas fa-stethoscope"></i> Specializations (PG Level)</div>
+            <ul class="list-group">
+                <li class="list-group-item"><i class="fas fa-user-md"></i> General Medicine</li>
+                <li class="list-group-item"><i class="fas fa-user-md"></i> General Surgery</li>
+                <li class="list-group-item"><i class="fas fa-user-md"></i> Pediatrics</li>
+                <li class="list-group-item"><i class="fas fa-user-md"></i> Orthopedics</li>
+                <li class="list-group-item"><i class="fas fa-user-md"></i> Dermatology</li>
+                <li class="list-group-item"><i class="fas fa-user-md"></i> Obstetrics & Gynecology</li>
+                <li class="list-group-item"><i class="fas fa-user-md"></i> Psychiatry</li>
+                <li class="list-group-item"><i class="fas fa-user-md"></i> Radiology</li>
+            </ul>
+        </div>
+
+        <!-- 8. Key Skills Required -->
+        <div class="section-title"><i class="fas fa-tools"></i> Key Skills Required</div>
+        <div class="card">
+            <div class="subsection-title"><i class="fas fa-stethoscope"></i> Technical</div>
+            <ul class="list-group">
+                <li class="list-group-item"><i class="fas fa-diagnoses"></i> Clinical diagnosis and treatment skills</li>
+                <li class="list-group-item"><i class="fas fa-user-md"></i> Surgical techniques</li>
+                <li class="list-group-item"><i class="fas fa-microscope"></i> Use of medical equipment</li>
+            </ul>
+            <div class="subsection-title"><i class="fas fa-brain"></i> Analytical/Logical</div>
+            <ul class="list-group">
+                <li class="list-group-item"><i class="fas fa-lightbulb"></i> Critical thinking</li>
+                <li class="list-group-item"><i class="fas fa-puzzle-piece"></i> Problem-solving</li>
+                <li class="list-group-item"><i class="fas fa-search"></i> Diagnostic reasoning</li>
+            </ul>
+            <div class="subsection-title"><i class="fas fa-users"></i> Soft Skills</div>
+            <ul class="list-group">
+                <li class="list-group-item"><i class="fas fa-comments"></i> Communication and empathy</li>
+                <li class="list-group-item"><i class="fas fa-handshake"></i> Teamwork and collaboration</li>
+                <li class="list-group-item"><i class="fas fa-clock"></i> Stress management</li>
+                <li class="list-group-item"><i class="fas fa-balance-scale"></i> Ethical decision-making</li>
+            </ul>
+        </div>
+
+        <!-- 9. International Exposure & Study Abroad Options -->
+        <div class="section-title"><i class="fas fa-globe-americas"></i> International Exposure & Study Abroad Options</div>
+        <div class="card">
+            <ul class="list-group">
+                <li class="list-group-item"><i class="fas fa-exchange-alt"></i> Student exchange programs with global medical universities</li>
+                <li class="list-group-item"><i class="fas fa-users"></i> International conferences and workshops</li>
+                <li class="list-group-item"><i class="fas fa-map-marked-alt"></i> Study abroad destinations: USA, UK, Australia, Germany, Russia, China</li>
+                <li class="list-group-item"><i class="fas fa-award"></i> Scholarships: DAAD, Erasmus+, Fulbright, Chevening</li>
+            </ul>
+        </div>
+
+        <!-- 10. Career Pathways -->
+        <div class="section-title"><i class="fas fa-road"></i> Career Pathways</div>
+        <div class="card">
+            <table class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th><i class="fas fa-stream"></i> Stream</th>
+                        <th><i class="fas fa-user-graduate"></i> UG (5.5 years)</th>
+                        <th><i class="fas fa-user-graduate"></i> PG (2–3 years)</th>
+                        <th><i class="fas fa-graduation-cap"></i> Research (2–3 years)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><i class="fas fa-path"></i> Path 1</td>
+                        <td>MBBS</td>
+                        <td>MD/MS</td>
+                        <td>PhD in Medical Science</td>
+                    </tr>
+                    <tr>
+                        <td><i class="fas fa-path"></i> Path 2</td>
+                        <td>MBBS</td>
+                        <td>MBA Healthcare Management</td>
+                        <td>PhD in Public Health</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- 11. Job Roles & Top Recruiters -->
+        <div class="section-title"><i class="fas fa-briefcase"></i> Job Roles & Top Recruiters</div>
+        <div class="card">
+            <div class="subsection-title"><i class="fas fa-user-md"></i> Job Roles</div>
+            <ul class="list-group">
+                <li class="list-group-item"><i class="fas fa-stethoscope"></i> General Practitioner</li>
+                <li class="list-group-item"><i class="fas fa-user-md"></i> Specialist Doctor (Cardiologist, Neurologist, etc.)</li>
+                <li class="list-group-item"><i class="fas fa-user-md"></i> Surgeon</li>
+                <li class="list-group-item"><i class="fas fa-microscope"></i> Medical Researcher</li>
+                <li class="list-group-item"><i class="fas fa-globe"></i> Public Health Professional</li>
+                <li class="list-group-item"><i class="fas fa-chalkboard-teacher"></i> Medical Educator</li>
+                <li class="list-group-item"><i class="fas fa-hospital"></i> Healthcare Administrator</li>
+            </ul>
+            <div class="subsection-title"><i class="fas fa-building"></i> Top Recruiters</div>
+            <div class="subsection-title"><i class="fas fa-flag"></i> India</div>
+            <ul class="list-group">
+                <li class="list-group-item"><i class="fas fa-hospital-alt"></i> AIIMS</li>
+                <li class="list-group-item"><i class="fas fa-hospital-alt"></i> Apollo Hospitals</li>
+                <li class="list-group-item"><i class="fas fa-hospital-alt"></i> Fortis Healthcare</li>
+                <li class="list-group-item"><i class="fas fa-hospital-alt"></i> Max Healthcare</li>
+                <li class="list-group-item"><i class="fas fa-hospital-alt"></i> Manipal Hospitals</li>
+                <li class="list-group-item"><i class="fas fa-university"></i> Government Medical Colleges</li>
+                <li class="list-group-item"><i class="fas fa-shield-alt"></i> Indian Armed Forces</li>
+            </ul>
+            <div class="subsection-title"><i class="fas fa-globe"></i> Global</div>
+            <ul class="list-group">
+                <li class="list-group-item"><i class="fas fa-hospital-alt"></i> NHS (UK)</li>
+                <li class="list-group-item"><i class="fas fa-hospital-alt"></i> Mayo Clinic (USA)</li>
+                <li class="list-group-item"><i class="fas fa-hospital-alt"></i> Cleveland Clinic (USA)</li>
+                <li class="list-group-item"><i class="fas fa-hospital-alt"></i> Mount Sinai (USA)</li>
+                <li class="list-group-item"><i class="fas fa-hospital-alt"></i> Johns Hopkins Hospital (USA)</li>
+                <li class="list-group-item"><i class="fas fa-globe"></i> WHO</li>
+                <li class="list-group-item"><i class="fas fa-globe"></i> UNICEF</li>
+            </ul>
+        </div>
+
+        <!-- 12. Salary Insights -->
+        <div class="section-title"><i class="fas fa-wallet"></i> Salary Insights (India & Abroad)</div>
+        <div class="card">
+            <ul class="list-group">
+                <li class="list-group-item"><i class="fas fa-rupee-sign"></i> Freshers (India): ₹3L – ₹6L per annum</li>
+                <li class="list-group-item"><i class="fas fa-rupee-sign"></i> Mid-Level (India): ₹7L – ₹12L per annum</li>
+                <li class="list-group-item"><i class="fas fa-dollar-sign"></i> Abroad Salary: ₹60L – ₹120L per annum (USD 80K – 160K approx.)</li>
+            </ul>
+        </div>
+
+        <!-- 13. Top Colleges – India -->
+        <div class="section-title"><i class="fas fa-university"></i> Top Colleges – India</div>
+        <div class="card">
+            <ul class="list-group">
+                <li class="list-group-item"><i class="fas fa-building"></i> AIIMS Delhi</li>
+                <li class="list-group-item"><i class="fas fa-building"></i> AFMC Pune</li>
+                <li class="list-group-item"><i class="fas fa-building"></i> Maulana Azad Medical College, Delhi</li>
+                <li class="list-group-item"><i class="fas fa-building"></i> Kasturba Medical College, Manipal</li>
+                <li class="list-group-item"><i class="fas fa-building"></i> St. John’s Medical College, Bangalore</li>
+                <li class="list-group-item"><i class="fas fa-building"></i> King George's Medical University, Lucknow</li>
+                <li class="list-group-item"><i class="fas fa-building"></i> Grant Medical College, Mumbai</li>
+                <li class="list-group-item"><i class="fas fa-building"></i> Seth GS Medical College, Mumbai</li>
+                <li class="list-group-item"><i class="fas fa-building"></i> Institute of Medical Sciences, BHU Varanasi</li>
+                <li class="list-group-item"><i class="fas fa-building"></i> Vardhman Mahavir Medical College, Delhi</li>
+                <li class="list-group-item"><i class="fas fa-building"></i> Osmania Medical College, Hyderabad</li>
+                <li class="list-group-item"><i class="fas fa-building"></i> Bangalore Medical College and Research Institute</li>
+                <li class="list-group-item"><i class="fas fa-building"></i> Lady Hardinge Medical College, Delhi</li>
+                <li class="list-group-item"><i class="fas fa-building"></i> JIPMER Puducherry</li>
+                <li class="list-group-item"><i class="fas fa-building"></i> BJ Medical College, Ahmedabad</li>
+            </ul>
+        </div>
+
+        <!-- 14. Top Colleges – World -->
+        <div class="section-title"><i class="fas fa-globe"></i> Top Colleges – World</div>
+        <div class="card">
+            <ul class="list-group">
+                <li class="list-group-item"><i class="fas fa-university"></i> Harvard University, USA</li>
+                <li class="list-group-item"><i class="fas fa-university"></i> University of Oxford, UK</li>
+                <li class="list-group-item"><i class="fas fa-university"></i> University of Cambridge, UK</li>
+                <li class="list-group-item"><i class="fas fa-university"></i> Stanford University, USA</li>
+                <li class="list-group-item"><i class="fas fa-university"></i> Johns Hopkins University, USA</li>
+                <li class="list-group-item"><i class="fas fa-university"></i> University of California, San Francisco, USA</li>
+                <li class="list-group-item"><i class="fas fa-university"></i> Karolinska Institute, Sweden</li>
+                <li class="list-group-item"><i class="fas fa-university"></i> University of Melbourne, Australia</li>
+                <li class="list-group-item"><i class="fas fa-university"></i> Imperial College London, UK</li>
+                <li class="list-group-item"><i class="fas fa-university"></i> University of Toronto, Canada</li>
+                <li class="list-group-item"><i class="fas fa-university"></i> University of Tokyo, Japan</li>
+                <li class="list-group-item"><i class="fas fa-university"></i> National University of Singapore</li>
+                <li class="list-group-item"><i class="fas fa-university"></i> University of Sydney, Australia</li>
+                <li class="list-group-item"><i class="fas fa-university"></i> University of Edinburgh, UK</li>
+                <li class="list-group-item"><i class="fas fa-university"></i> Yale University, USA</li>
+            </ul>
+        </div>
+
+        <!-- 15. Top Colleges – Tamil Nadu -->
+        <div class="section-title"><i class="fas fa-university"></i> Top Colleges – Tamil Nadu</div>
+        <div class="card">
+            <ul class="list-group">
+                <li class="list-group-item"><i class="fas fa-building"></i> Madras Medical College, Chennai</li>
+                <li class="list-group-item"><i class="fas fa-building"></i> Stanley Medical College, Chennai</li>
+                <li class="list-group-item"><i class="fas fa-building"></i> Kilpauk Medical College, Chennai</li>
+                <li class="list-group-item"><i class="fas fa-building"></i> PSG Institute of Medical Sciences, Coimbatore</li>
+                <li class="list-group-item"><i class="fas fa-building"></i> Coimbatore Medical College</li>
+                <li class="list-group-item"><i class="fas fa-building"></i> Government Rajaji Medical College, Madurai</li>
+                <li class="list-group-item"><i class="fas fa-building"></i> Government Medical College, Trichy</li>
+                <li class="list-group-item"><i class="fas fa-building"></i> Government Medical College, Thanjavur</li>
+                <li class="list-group-item"><i class="fas fa-building"></i> Government Medical College, Tirunelveli</li>
+                <li class="list-group-item"><i class="fas fa-building"></i> Government Medical College, Erode</li>
+                <li class="list-group-item"><i class="fas fa-building"></i> Government Medical College, Theni</li>
+                <li class="list-group-item"><i class="fas fa-building"></i> Government Medical College, Omandurar (Chennai)</li>
+                <li class="list-group-item"><i class="fas fa-building"></i> SRM Medical College Hospital & Research Centre, Kanchipuram</li>
+                <li class="list-group-item"><i class="fas fa-building"></i> Government Mohan Kumaramangalam Medical College, Salem</li>
+            </ul>
+        </div>
+
+        <!-- 16. Benefits of Choosing This Course -->
+        <div class="section-title"><i class="fas fa-heartbeat"></i> Benefits of Choosing This Course</div>
+        <div class="card">
+            <ul class="list-group">
+                <li class="list-group-item"><i class="fas fa-hands-helping"></i> Opportunity to save lives and contribute to society</li>
+                <li class="list-group-item"><i class="fas fa-briefcase"></i> Strong demand and job security worldwide</li>
+                <li class="list-group-item"><i class="fas fa-briefcase"></i> Diverse career options in clinical practice, research, public health, and education</li>
+                <li class="list-group-item"><i class="fas fa-wallet"></i> High earning potential with global mobility</li>
+                <li class="list-group-item"><i class="fas fa-graduation-cap"></i> Continuous learning and professional growth</li>
+            </ul>
+        </div>
+
+        <!-- 17. Advantages and Disadvantages -->
+        <div class="section-title"><i class="fas fa-balance-scale"></i> Advantages and Disadvantages</div>
+        <div class="card">
+            <div class="subsection-title"><i class="fas fa-thumbs-up"></i> Advantages</div>
+            <ul class="list-group">
+                <li class="list-group-item"><i class="fas fa-briefcase"></i> Multiple job sectors across healthcare</li>
+                <li class="list-group-item"><i class="fas fa-globe"></i> Global opportunities through international licensing exams</li>
+                <li class="list-group-item"><i class="fas fa-lightbulb"></i> High innovation scope in medical research and technology</li>
+                <li class="list-group-item"><i class="fas fa-award"></i> Societal respect and recognition</li>
+            </ul>
+            <div class="subsection-title"><i class="fas fa-thumbs-down"></i> Disadvantages</div>
+            <ul class="list-group">
+                <li class="list-group-item"><i class="fas fa-trophy"></i> Intense competition for MBBS admission and specialization</li>
+                <li class="list-group-item"><i class="fas fa-clock"></i> Long duration of study and training</li>
+                <li class="list-group-item"><i class="fas fa-heartbeat"></i> High academic and work-related stress</li>
+                <li class="list-group-item"><i class="fas fa-wallet"></i> Modest starting salaries in public healthcare settings</li>
+            </ul>
+        </div>
+
+        <!-- 18. FAQs & Student Queries -->
+        <div class="section-title"><i class="fas fa-question-circle"></i> FAQs & Student Queries</div>
+        <div class="card">
+            <div class="subsection-title"><i class="fas fa-question"></i> Q1. How difficult is it to get into MBBS?</div>
+            <p><i class="fas fa-info-circle"></i> Ans. Admission to MBBS is highly competitive in India; cracking NEET-UG with a good score is essential.</p>
+            <div class="subsection-title"><i class="fas fa-question"></i> Q2. Can I switch to other healthcare careers after MBBS?</div>
+            <p><i class="fas fa-info-circle"></i> Ans. Yes, MBBS graduates can explore public health, hospital administration, research, and teaching roles.</p>
+            <div class="subsection-title"><i class="fas fa-question"></i> Q3. What are the PG options after MBBS?</div>
+            <p><i class="fas fa-info-circle"></i> Ans. MD/MS in various specialties, DNB programs, MPH (Public Health), MBA in Hospital Administration.</p>
+            <div class="subsection-title"><i class="fas fa-question"></i> Q4. What is the workload like for MBBS students and doctors?</div>
+            <p><i class="fas fa-info-circle"></i> Ans. The academic load is heavy, and the profession demands long working hours and emergency duty readiness.</p>
+            <div class="subsection-title"><i class="fas fa-question"></i> Q5. Is an MBBS degree from abroad valid in India?</div>
+            <p><i class="fas fa-info-circle"></i> Ans. Yes, provided the foreign MBBS degree is recognized by the NMC (India), and the graduate clears the FMGE (Foreign Medical Graduate Examination).</p>
+        </div>
+    </div>
+
+    <!-- Bootstrap 4 JS and dependencies -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
